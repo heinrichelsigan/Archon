@@ -44,6 +44,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.ShowableListMenu;
 
 import java.util.Objects;
 import java.util.HashMap;
@@ -63,14 +64,11 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView myimageA8, myimageB8, myimageC8, myimageD8, myimageE8, myimageF8, myimageG8, myimageH8, myimageI8;
     ImageView myimageA7, myimageB7, myimageC7, myimageD7, myimageE7, myimageF7, myimageG7, myimageH7, myimageI7;
-    ImageView myimageA6, myimageB6, myimageC6, myimageD6, myimageE6, myimageF6, myimageG6, myimageH6, myimageI6;
-    ImageView myimageA5, myimageB5, myimageC5, myimageD5, myimageE5, myimageF5, myimageG5, myimageH5, myimageI5;
-    ImageView myimageA4, myimageB4, myimageC4, myimageD4, myimageE4, myimageF4, myimageG4, myimageH4, myimageI4;
-    ImageView myimageA3, myimageB3, myimageC3, myimageD3, myimageE3, myimageF3, myimageG3, myimageH3, myimageI3;
-    ImageView myimageA2, myimageB2, myimageC2, myimageD2, myimageE2, myimageF2, myimageG2, myimageH2, myimageI2;
     ImageView myimageA1, myimageB1, myimageC1, myimageD1, myimageE1, myimageF1, myimageG1, myimageH1, myimageI1;
     ImageView myimageA0, myimageB0, myimageC0, myimageD0, myimageE0, myimageF0, myimageG0, myimageH0, myimageI0;
     ImageView currentImage;
+
+    Menu myMenu;
 
     HashMap<Integer,ImageView> ImageRessources = new HashMap<Integer,ImageView>();
     HashMap<Integer, LinearLayout> LinearLayoutRessources = new HashMap<Integer, LinearLayout>();
@@ -78,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
     int index = 4;
     volatile int errNum = 0;
     String tmp = "";
+    volatile boolean started = false;
+    volatile int startedTimes = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,9 +85,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         InitLinearLayoutArchonFields();
+        InitLinearLayoutRessourcesMap();
+
         InitImageArchonFields();
         InitImageRessourcesMap();
-        InitLinearLayoutRessourcesMap();
 
         InitImageOnTouchListeners();
         InitLinearLayoutOnDragListeners();
@@ -216,56 +217,6 @@ public class MainActivity extends AppCompatActivity {
         myimageH7 = (ImageView) findViewById(R.id.myimageH7);
         myimageI7 = (ImageView) findViewById(R.id.myimageI7);
 
-        myimageA6 = (ImageView) findViewById(R.id.myimageA6);
-        myimageB6 = (ImageView) findViewById(R.id.myimageB6);
-        myimageC6 = (ImageView) findViewById(R.id.myimageC6);
-        myimageD6 = (ImageView) findViewById(R.id.myimageD6);
-        myimageE6 = (ImageView) findViewById(R.id.myimageE6);
-        myimageF6 = (ImageView) findViewById(R.id.myimageF6);
-        myimageG6 = (ImageView) findViewById(R.id.myimageG6);
-        myimageH6 = (ImageView) findViewById(R.id.myimageH6);
-        myimageI6 = (ImageView) findViewById(R.id.myimageI6);
-
-        myimageA5 = (ImageView) findViewById(R.id.myimageA5);
-        myimageB5 = (ImageView) findViewById(R.id.myimageB5);
-        myimageC5 = (ImageView) findViewById(R.id.myimageC5);
-        myimageD5 = (ImageView) findViewById(R.id.myimageD5);
-        myimageE5 = (ImageView) findViewById(R.id.myimageE5);
-        myimageF5 = (ImageView) findViewById(R.id.myimageF5);
-        myimageG5 = (ImageView) findViewById(R.id.myimageG5);
-        myimageH5 = (ImageView) findViewById(R.id.myimageH5);
-        myimageI5 = (ImageView) findViewById(R.id.myimageI5);
-
-        myimageA4 = (ImageView) findViewById(R.id.myimageA4);
-        myimageB4 = (ImageView) findViewById(R.id.myimageB4);
-        myimageC4 = (ImageView) findViewById(R.id.myimageC4);
-        myimageD4 = (ImageView) findViewById(R.id.myimageD4);
-        myimageE4 = (ImageView) findViewById(R.id.myimageE4);
-        myimageF4 = (ImageView) findViewById(R.id.myimageF4);
-        myimageG4 = (ImageView) findViewById(R.id.myimageG4);
-        myimageH4 = (ImageView) findViewById(R.id.myimageH4);
-        myimageI4 = (ImageView) findViewById(R.id.myimageI4);
-
-        myimageA3 = (ImageView) findViewById(R.id.myimageA3);
-        myimageB3 = (ImageView) findViewById(R.id.myimageB3);
-        myimageC3 = (ImageView) findViewById(R.id.myimageC3);
-        myimageD3 = (ImageView) findViewById(R.id.myimageD3);
-        myimageE3 = (ImageView) findViewById(R.id.myimageE3);
-        myimageF3 = (ImageView) findViewById(R.id.myimageF3);
-        myimageG3 = (ImageView) findViewById(R.id.myimageG3);
-        myimageH3 = (ImageView) findViewById(R.id.myimageH3);
-        myimageI3 = (ImageView) findViewById(R.id.myimageI3);
-
-        myimageA2 = (ImageView) findViewById(R.id.myimageA2);
-        myimageB2 = (ImageView) findViewById(R.id.myimageB2);
-        myimageC2 = (ImageView) findViewById(R.id.myimageC2);
-        myimageD2 = (ImageView) findViewById(R.id.myimageD2);
-        myimageE2 = (ImageView) findViewById(R.id.myimageE2);
-        myimageF2 = (ImageView) findViewById(R.id.myimageF2);
-        myimageG2 = (ImageView) findViewById(R.id.myimageG2);
-        myimageH2 = (ImageView) findViewById(R.id.myimageH2);
-        myimageI2 = (ImageView) findViewById(R.id.myimageI2);
-
         myimageA1 = (ImageView) findViewById(R.id.myimageA1);
         myimageB1 = (ImageView) findViewById(R.id.myimageB1);
         myimageC1 = (ImageView) findViewById(R.id.myimageC1);
@@ -292,6 +243,9 @@ public class MainActivity extends AppCompatActivity {
      * Add local variables images corresponding to R.id ressources to ImageRessources HashMap
      */
     private void InitImageRessourcesMap() {
+        // Clear Ressource Map first to avoid duplicated entries in HashMap, when method is called more than once
+        ImageRessources.clear();
+        // Init image ressource map
         ImageRessources.put(R.id.myimageA8, myimageA8);
         ImageRessources.put(R.id.myimageB8, myimageB8);
         ImageRessources.put(R.id.myimageC8, myimageC8);
@@ -311,56 +265,6 @@ public class MainActivity extends AppCompatActivity {
         ImageRessources.put(R.id.myimageG7, myimageG7);
         ImageRessources.put(R.id.myimageH7, myimageH7);
         ImageRessources.put(R.id.myimageI7, myimageI7);
-
-        ImageRessources.put(R.id.myimageA6, myimageA6);
-        ImageRessources.put(R.id.myimageB6, myimageB6);
-        ImageRessources.put(R.id.myimageC6, myimageC6);
-        ImageRessources.put(R.id.myimageD6, myimageD6);
-        ImageRessources.put(R.id.myimageE6, myimageE6);
-        ImageRessources.put(R.id.myimageF6, myimageF6);
-        ImageRessources.put(R.id.myimageG6, myimageG6);
-        ImageRessources.put(R.id.myimageH6, myimageH6);
-        ImageRessources.put(R.id.myimageI6, myimageI6);
-
-        ImageRessources.put(R.id.myimageA5, myimageA5);
-        ImageRessources.put(R.id.myimageB5, myimageB5);
-        ImageRessources.put(R.id.myimageC5, myimageC5);
-        ImageRessources.put(R.id.myimageD5, myimageD5);
-        ImageRessources.put(R.id.myimageE5, myimageE5);
-        ImageRessources.put(R.id.myimageF5, myimageF5);
-        ImageRessources.put(R.id.myimageG5, myimageG5);
-        ImageRessources.put(R.id.myimageH5, myimageH5);
-        ImageRessources.put(R.id.myimageI5, myimageI5);
-
-        ImageRessources.put(R.id.myimageA4, myimageA4);
-        ImageRessources.put(R.id.myimageB4, myimageB4);
-        ImageRessources.put(R.id.myimageC4, myimageC4);
-        ImageRessources.put(R.id.myimageD4, myimageD4);
-        ImageRessources.put(R.id.myimageE4, myimageE4);
-        ImageRessources.put(R.id.myimageF4, myimageF4);
-        ImageRessources.put(R.id.myimageG4, myimageG4);
-        ImageRessources.put(R.id.myimageH4, myimageH4);
-        ImageRessources.put(R.id.myimageI4, myimageI4);
-
-        ImageRessources.put(R.id.myimageA3, myimageA3);
-        ImageRessources.put(R.id.myimageB3, myimageB3);
-        ImageRessources.put(R.id.myimageC3, myimageC3);
-        ImageRessources.put(R.id.myimageD3, myimageD3);
-        ImageRessources.put(R.id.myimageE3, myimageE3);
-        ImageRessources.put(R.id.myimageF3, myimageF3);
-        ImageRessources.put(R.id.myimageG3, myimageG3);
-        ImageRessources.put(R.id.myimageH3, myimageH3);
-        ImageRessources.put(R.id.myimageI3, myimageI3);
-
-        ImageRessources.put(R.id.myimageA2, myimageA2);
-        ImageRessources.put(R.id.myimageB2, myimageB2);
-        ImageRessources.put(R.id.myimageC2, myimageC2);
-        ImageRessources.put(R.id.myimageD2, myimageD2);
-        ImageRessources.put(R.id.myimageE2, myimageE2);
-        ImageRessources.put(R.id.myimageF2, myimageF2);
-        ImageRessources.put(R.id.myimageG2, myimageG2);
-        ImageRessources.put(R.id.myimageH2, myimageH2);
-        ImageRessources.put(R.id.myimageI2, myimageI2);
 
         ImageRessources.put(R.id.myimageA1, myimageA1);
         ImageRessources.put(R.id.myimageB1, myimageB1);
@@ -388,6 +292,7 @@ public class MainActivity extends AppCompatActivity {
      * Add local variables linear layouts corresponding to R.id ressources to InitLinearLayoutRessourcesMap
      */
     private void InitLinearLayoutRessourcesMap() {
+        LinearLayoutRessources.clear();
         LinearLayoutRessources.put(R.id.A8, a8);
         LinearLayoutRessources.put(R.id.B8, b8);
         LinearLayoutRessources.put(R.id.C8, c8);
@@ -575,7 +480,141 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.I0).setBackground(getResources().getDrawable(R.drawable.bgblack, getApplicationContext().getTheme()));
     }
 
+    /**
+     * Resets board foreground map
+     */
+    private void ResetForegroundMap() {
+        a8.removeAllViews();
+        myimageA8.setImageResource(R.drawable.ogre);
+        b8.removeAllViews();
+        c8.removeAllViews();
+        d8.removeAllViews();
+        e8.removeAllViews();
+        f8.removeAllViews();
+        g8.removeAllViews();
+        h8.removeAllViews();
+        i8.removeAllViews();
 
+        a7.removeAllViews();
+        b7.removeAllViews();
+        c7.removeAllViews();
+        d7.removeAllViews();
+        e7.removeAllViews();
+        f7.removeAllViews();
+        g7.removeAllViews();
+        h7.removeAllViews();
+        i7.removeAllViews();
+
+        a6.removeAllViews();
+        b6.removeAllViews();
+        c6.removeAllViews();
+        d6.removeAllViews();
+        e6.removeAllViews();
+        f6.removeAllViews();
+        g6.removeAllViews();
+        h6.removeAllViews();
+        i6.removeAllViews();
+
+        a5.removeAllViews();
+        b5.removeAllViews();
+        c5.removeAllViews();
+        d5.removeAllViews();
+        e5.removeAllViews();
+        f5.removeAllViews();
+        g5.removeAllViews();
+        h5.removeAllViews();
+        i5.removeAllViews();
+
+        a4.removeAllViews();
+        b4.removeAllViews();
+        c4.removeAllViews();
+        d4.removeAllViews();
+        e4.removeAllViews();
+        f4.removeAllViews();
+        g4.removeAllViews();
+        h4.removeAllViews();
+        i4.removeAllViews();
+
+        a3.removeAllViews();
+        b3.removeAllViews();
+        c3.removeAllViews();
+        d3.removeAllViews();
+        e3.removeAllViews();
+        f3.removeAllViews();
+        g3.removeAllViews();
+        h3.removeAllViews();
+        i3.removeAllViews();
+
+        a2.removeAllViews();
+        b2.removeAllViews();
+        c2.removeAllViews();
+        d2.removeAllViews();
+        e2.removeAllViews();
+        f2.removeAllViews();
+        g2.removeAllViews();
+        h2.removeAllViews();
+        i2.removeAllViews();
+
+        a1.removeAllViews();
+        b1.removeAllViews();
+        c1.removeAllViews();
+        d1.removeAllViews();
+        e1.removeAllViews();
+        f1.removeAllViews();
+        g1.removeAllViews();
+        h1.removeAllViews();
+        i1.removeAllViews();
+
+        a0.removeAllViews();
+        b0.removeAllViews();
+        c0.removeAllViews();
+        d0.removeAllViews();
+        e0.removeAllViews();
+        f0.removeAllViews();
+        g0.removeAllViews();
+        h0.removeAllViews();
+        i0.removeAllViews();
+
+        a8.addView(myimageA8);
+        b8.addView(myimageB8);
+        c8.addView(myimageC8);
+        d8.addView(myimageD8);
+        e8.addView(myimageE8);
+        f8.addView(myimageF8);
+        g8.addView(myimageG8);
+        h8.addView(myimageH8);
+        i8.addView(myimageI8);
+
+        a7.addView(myimageA7);
+        b7.addView(myimageB7);
+        c7.addView(myimageC7);
+        d7.addView(myimageD7);
+        e7.addView(myimageE7);
+        f7.addView(myimageF7);
+        g7.addView(myimageG7);
+        h7.addView(myimageH7);
+        i7.addView(myimageI7);
+
+        a1.addView(myimageA1);
+        b1.addView(myimageB1);
+        c1.addView(myimageC1);
+        d1.addView(myimageD1);
+        e1.addView(myimageE1);
+        f1.addView(myimageF1);
+        g1.addView(myimageG1);
+        h1.addView(myimageH1);
+        i1.addView(myimageI1);
+
+        a0.addView(myimageA0);
+        b0.addView(myimageB0);
+        c0.addView(myimageC0);
+        d0.addView(myimageD0);
+        e0.addView(myimageE0);
+        f0.addView(myimageF0);
+        g0.addView(myimageG0);
+        h0.addView(myimageH0);
+        i0.addView(myimageI0);
+    }
 
     /**
      * Init all image onTouchListener
@@ -592,119 +631,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-        /*
-        findViewById(R.id.myimageA8).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageA8);
-            }
-        });
-        findViewById(R.id.myimageB8).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageB8);
-            }
-        });
-        findViewById(R.id.myimageC8).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageC8);
-            }
-        });
-        findViewById(R.id.myimageD8).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageD8);
-            }
-        });
-        findViewById(R.id.myimageE8).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageE8);
-            }
-        });
-        findViewById(R.id.myimageF8).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageF8);
-            }
-        });
-        findViewById(R.id.myimageG8).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageG8);
-            }
-        });
-        findViewById(R.id.myimageH8).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageH8);
-            }
-        });
-        findViewById(R.id.myimageI8).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageI8);
-            }
-        });
-
-
-        findViewById(R.id.myimageA0).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageA0);
-            }
-        });
-        findViewById(R.id.myimageB0).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageB0);
-            }
-        });
-        findViewById(R.id.myimageC0).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageC0);
-            }
-        });
-        findViewById(R.id.myimageD0).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageD0);
-            }
-        });
-        findViewById(R.id.myimageE0).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageE0);
-            }
-        });
-
-        findViewById(R.id.myimageF0).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageF0);
-            }
-        });
-        findViewById(R.id.myimageG0).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageG0);
-            }
-        });
-        findViewById(R.id.myimageH0).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageH0);
-            }
-        });
-        findViewById(R.id.myimageI0).setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return onTouchListener(view, motionEvent, myimageI0);
-            }
-        });
-         */
     }
 
 
@@ -723,80 +649,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-
-        /*
-        findViewById(R.id.A8).setOnDragListener(new OnDragListener() {
-            @Override
-            public boolean onDrag(View view, DragEvent dragEvent) {
-                return onDragListener(view, dragEvent);
-            }
-        });
-        findViewById(R.id.B8).setOnDragListener(new OnDragListener() {
-            @Override
-            public boolean onDrag(View view, DragEvent dragEvent) {
-                return onDragListener(view, dragEvent);
-            }
-        });
-        findViewById(R.id.C8).setOnDragListener(new OnDragListener() {
-            @Override
-            public boolean onDrag(View view, DragEvent dragEvent) {
-                return onDragListener(view, dragEvent);
-            }
-        });
-        findViewById(R.id.D8).setOnDragListener(new OnDragListener() {
-            @Override
-            public boolean onDrag(View view, DragEvent dragEvent) {
-                return onDragListener(view, dragEvent);
-            }
-        });
-        findViewById(R.id.E8).setOnDragListener(new OnDragListener() {
-            @Override
-            public boolean onDrag(View view, DragEvent dragEvent) {
-                return onDragListener(view, dragEvent);
-            }
-        });
-        findViewById(R.id.F8).setOnDragListener(new OnDragListener() {
-            @Override
-            public boolean onDrag(View view, DragEvent dragEvent) {
-                return onDragListener(view, dragEvent);
-            }
-        });
-        findViewById(R.id.G8).setOnDragListener(new OnDragListener() {
-            @Override
-            public boolean onDrag(View view, DragEvent dragEvent) {
-                return onDragListener(view, dragEvent);
-            }
-        });
-        findViewById(R.id.H8).setOnDragListener(new OnDragListener() {
-            @Override
-            public boolean onDrag(View view, DragEvent dragEvent) {
-                return onDragListener(view, dragEvent);
-            }
-        });
-        findViewById(R.id.I8).setOnDragListener(new OnDragListener() {
-            @Override
-            public boolean onDrag(View view, DragEvent dragEvent) {
-                return onDragListener(view, dragEvent);
-            }
-        });
-
-        findViewById(R.id.A1).setOnDragListener(new OnDragListener() {
-            @Override
-            public boolean onDrag(View view, DragEvent dragEvent) {
-                return onDragListener(view, dragEvent);
-            }
-        });
-        findViewById(R.id.H1).setOnDragListener(new OnDragListener() {
-            @Override
-            public boolean onDrag(View view, DragEvent dragEvent) {
-                return onDragListener(view, dragEvent);
-            }
-        });
-         */
     }
 
-
+    /**
+     * onTouchListener fired, when view with image is touched
+     * @param v view which is touched
+     * @param motionEvent specific devent
+     * @param theImage image in the view, who is touched
+     */
     public boolean onTouchListener(View view, MotionEvent motionEvent, ImageView theImage) {
+        if (!started) {
+            showMessage(getString(R.string.string_notstarted));
+            return false;
+        }
+
         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
 
             currentImage = theImage;
@@ -814,7 +680,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * onDragListener fired, when drag and drop event is performed
+     * @param v view on which image is dragged or dropped
+     * @param event specific drag, drop event
+     */
     public boolean onDragListener(View v, DragEvent event) {
+
+        if (!started) {
+            showMessage(getString(R.string.string_notstarted));
+            return false;
+        }
 
         Drawable enterShape = getResources().getDrawable(R.drawable.shape_droptarget, null);
         Drawable normalShape = getResources().getDrawable(R.drawable.shape, null);
@@ -874,6 +750,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        myMenu = menu;
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -887,11 +764,11 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_start) {
-            showMessage("Menu item " + getString(R.string.action_start) + " ressourceId: " + R.id.action_start + " choosen.");
+            startGame();
             return true;
         }
         if (id == R.id.action_stop) {
-            showMessage("Menu item " + getString(R.string.action_stop) + " ressourceId: " + R.id.action_stop + " choosen.");
+            stopGame();
             return true;
         }
         if (id == R.id.action_help) {
@@ -903,6 +780,44 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * startGame() starts a new game
+     */
+    public void startGame() {
+        if (myMenu != null) {
+            myMenu.findItem(R.id.action_start).setEnabled(false);
+            myMenu.findItem(R.id.action_stop).setEnabled(true);
+        }
+
+        ResetBackgroundMap();
+        ResetForegroundMap();
+
+        if (startedTimes > 0) {
+            InitLinearLayoutArchonFields();
+            InitLinearLayoutRessourcesMap();
+            InitImageArchonFields();
+            InitImageRessourcesMap();
+
+            InitLinearLayoutOnDragListeners();
+            InitImageOnTouchListeners();
+        }
+
+        started = true;
+        startedTimes++;
+        showMessage(getString(R.string.string_started));
+    }
+
+    /**
+     * startGame() starts a new game
+     */
+    public void stopGame() {
+        started = false;
+        if (myMenu != null) {
+            myMenu.findItem(R.id.action_start).setEnabled(true);
+            myMenu.findItem(R.id.action_stop).setEnabled(false);
+        }
+        showMessage(getString(R.string.string_stopped));
+    }
 
     /**
      * showHelp() prints out help text
