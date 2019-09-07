@@ -48,6 +48,7 @@ import androidx.appcompat.view.menu.ShowableListMenu;
 
 import java.util.Objects;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout a0, b0, c0, d0, e0, f0, g0, h0, i0;
     LinearLayout currentLayout;
 
-    ImageView myimageA8, myimageB8, myimageC8, myimageD8, myimageE8, myimageF8, myimageG8, myimageH8, myimageI8;
-    ImageView myimageA7, myimageB7, myimageC7, myimageD7, myimageE7, myimageF7, myimageG7, myimageH7, myimageI7;
-    ImageView myimageA1, myimageB1, myimageC1, myimageD1, myimageE1, myimageF1, myimageG1, myimageH1, myimageI1;
-    ImageView myimageA0, myimageB0, myimageC0, myimageD0, myimageE0, myimageF0, myimageG0, myimageH0, myimageI0;
+    ImageView ogreA8, basiliskB8, whichC8, devilD8, sorcererE8, dragonF8, whichG8, basiliskH8, ogreI8;
+    ImageView goblinA7, goblinB7, goblinC7, goblinD7, goblinE7, goblinF7, goblinG7, goblinH7, goblinI7;
+    ImageView knightA1, knightB1, knightC1, knightD1, knightE1, knightF1, knightG1, knightH1, knightI1;
+    ImageView golemA0, unicornB0, pegasusC0, djinnD0, mageE0, phoenixF0, pegasusG0, unicornH0, golemI0;
     ImageView currentImage;
 
     Menu myMenu;
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
     String tmp = "";
     volatile boolean started = false;
     volatile int startedTimes = 0;
+    volatile boolean knightSelected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -197,45 +199,45 @@ public class MainActivity extends AppCompatActivity {
      */
     private void InitImageArchonFields() {
 
-        myimageA8 = (ImageView) findViewById(R.id.myimageA8);
-        myimageB8 = (ImageView) findViewById(R.id.myimageB8);
-        myimageC8 = (ImageView) findViewById(R.id.myimageC8);
-        myimageD8 = (ImageView) findViewById(R.id.myimageD8);
-        myimageE8 = (ImageView) findViewById(R.id.myimageE8);
-        myimageF8 = (ImageView) findViewById(R.id.myimageF8);
-        myimageG8 = (ImageView) findViewById(R.id.myimageG8);
-        myimageH8 = (ImageView) findViewById(R.id.myimageH8);
-        myimageI8 = (ImageView) findViewById(R.id.myimageI8);
+        ogreA8 = (ImageView) findViewById(R.id.ogreA8);
+        basiliskB8 = (ImageView) findViewById(R.id.basiliskB8);
+        whichC8 = (ImageView) findViewById(R.id.whichC8);
+        devilD8 = (ImageView) findViewById(R.id.devilD8);
+        sorcererE8 = (ImageView) findViewById(R.id.sorcererE8);
+        dragonF8 = (ImageView) findViewById(R.id.dragonF8);
+        whichG8 = (ImageView) findViewById(R.id.whichG8);
+        basiliskH8 = (ImageView) findViewById(R.id.basiliskH8);
+        ogreI8 = (ImageView) findViewById(R.id.ogreI8);
 
-        myimageA7 = (ImageView) findViewById(R.id.myimageA7);
-        myimageB7 = (ImageView) findViewById(R.id.myimageB7);
-        myimageC7 = (ImageView) findViewById(R.id.myimageC7);
-        myimageD7 = (ImageView) findViewById(R.id.myimageD7);
-        myimageE7 = (ImageView) findViewById(R.id.myimageE7);
-        myimageF7 = (ImageView) findViewById(R.id.myimageF7);
-        myimageG7 = (ImageView) findViewById(R.id.myimageG7);
-        myimageH7 = (ImageView) findViewById(R.id.myimageH7);
-        myimageI7 = (ImageView) findViewById(R.id.myimageI7);
+        goblinA7 = (ImageView) findViewById(R.id.goblinA7);
+        goblinB7 = (ImageView) findViewById(R.id.goblinB7);
+        goblinC7 = (ImageView) findViewById(R.id.goblinC7);
+        goblinD7 = (ImageView) findViewById(R.id.goblinD7);
+        goblinE7 = (ImageView) findViewById(R.id.goblinE7);
+        goblinF7 = (ImageView) findViewById(R.id.goblinF7);
+        goblinG7 = (ImageView) findViewById(R.id.goblinG7);
+        goblinH7 = (ImageView) findViewById(R.id.goblinH7);
+        goblinI7 = (ImageView) findViewById(R.id.goblinI7);
 
-        myimageA1 = (ImageView) findViewById(R.id.myimageA1);
-        myimageB1 = (ImageView) findViewById(R.id.myimageB1);
-        myimageC1 = (ImageView) findViewById(R.id.myimageC1);
-        myimageD1 = (ImageView) findViewById(R.id.myimageD1);
-        myimageE1 = (ImageView) findViewById(R.id.myimageE1);
-        myimageF1 = (ImageView) findViewById(R.id.myimageF1);
-        myimageG1 = (ImageView) findViewById(R.id.myimageG1);
-        myimageH1 = (ImageView) findViewById(R.id.myimageH1);
-        myimageI1 = (ImageView) findViewById(R.id.myimageI1);
+        knightA1 = (ImageView) findViewById(R.id.knightA1);
+        knightB1 = (ImageView) findViewById(R.id.knightB1);
+        knightC1 = (ImageView) findViewById(R.id.knightC1);
+        knightD1 = (ImageView) findViewById(R.id.knightD1);
+        knightE1 = (ImageView) findViewById(R.id.knightE1);
+        knightF1 = (ImageView) findViewById(R.id.knightF1);
+        knightG1 = (ImageView) findViewById(R.id.knightG1);
+        knightH1 = (ImageView) findViewById(R.id.knightH1);
+        knightI1 = (ImageView) findViewById(R.id.knightI1);
 
-        myimageA0 = (ImageView) findViewById(R.id.myimageA0);
-        myimageB0 = (ImageView) findViewById(R.id.myimageB0);
-        myimageC0 = (ImageView) findViewById(R.id.myimageC0);
-        myimageD0 = (ImageView) findViewById(R.id.myimageD0);
-        myimageE0 = (ImageView) findViewById(R.id.myimageE0);
-        myimageF0 = (ImageView) findViewById(R.id.myimageF0);
-        myimageG0 = (ImageView) findViewById(R.id.myimageG0);
-        myimageH0 = (ImageView) findViewById(R.id.myimageH0);
-        myimageI0 = (ImageView) findViewById(R.id.myimageI0);
+        golemA0 = (ImageView) findViewById(R.id.golemA0);
+        unicornB0 = (ImageView) findViewById(R.id.unicornB0);
+        pegasusC0 = (ImageView) findViewById(R.id.pegasusC0);
+        djinnD0 = (ImageView) findViewById(R.id.djinnD0);
+        mageE0 = (ImageView) findViewById(R.id.mageE0);
+        phoenixF0 = (ImageView) findViewById(R.id.phoenixF0);
+        pegasusG0 = (ImageView) findViewById(R.id.pegasusG0);
+        unicornH0 = (ImageView) findViewById(R.id.unicornH0);
+        golemI0 = (ImageView) findViewById(R.id.golemI0);
     }
 
 
@@ -246,45 +248,45 @@ public class MainActivity extends AppCompatActivity {
         // Clear Ressource Map first to avoid duplicated entries in HashMap, when method is called more than once
         ImageRessources.clear();
         // Init image ressource map
-        ImageRessources.put(R.id.myimageA8, myimageA8);
-        ImageRessources.put(R.id.myimageB8, myimageB8);
-        ImageRessources.put(R.id.myimageC8, myimageC8);
-        ImageRessources.put(R.id.myimageD8, myimageD8);
-        ImageRessources.put(R.id.myimageE8, myimageE8);
-        ImageRessources.put(R.id.myimageF8, myimageF8);
-        ImageRessources.put(R.id.myimageG8, myimageG8);
-        ImageRessources.put(R.id.myimageH8, myimageH8);
-        ImageRessources.put(R.id.myimageI8, myimageI8);
+        ImageRessources.put(R.id.ogreA8, ogreA8);
+        ImageRessources.put(R.id.basiliskB8, basiliskB8);
+        ImageRessources.put(R.id.whichC8, whichC8);
+        ImageRessources.put(R.id.devilD8, devilD8);
+        ImageRessources.put(R.id.sorcererE8, sorcererE8);
+        ImageRessources.put(R.id.dragonF8, dragonF8);
+        ImageRessources.put(R.id.whichG8, whichG8);
+        ImageRessources.put(R.id.basiliskH8, basiliskH8);
+        ImageRessources.put(R.id.ogreI8, ogreI8);
 
-        ImageRessources.put(R.id.myimageA7, myimageA7);
-        ImageRessources.put(R.id.myimageB7, myimageB7);
-        ImageRessources.put(R.id.myimageC7, myimageC7);
-        ImageRessources.put(R.id.myimageD7, myimageD7);
-        ImageRessources.put(R.id.myimageE7, myimageE7);
-        ImageRessources.put(R.id.myimageF7, myimageF7);
-        ImageRessources.put(R.id.myimageG7, myimageG7);
-        ImageRessources.put(R.id.myimageH7, myimageH7);
-        ImageRessources.put(R.id.myimageI7, myimageI7);
+        ImageRessources.put(R.id.goblinA7, goblinA7);
+        ImageRessources.put(R.id.goblinB7, goblinB7);
+        ImageRessources.put(R.id.goblinC7, goblinC7);
+        ImageRessources.put(R.id.goblinD7, goblinD7);
+        ImageRessources.put(R.id.goblinE7, goblinE7);
+        ImageRessources.put(R.id.goblinF7, goblinF7);
+        ImageRessources.put(R.id.goblinG7, goblinG7);
+        ImageRessources.put(R.id.goblinH7, goblinH7);
+        ImageRessources.put(R.id.goblinI7, goblinI7);
 
-        ImageRessources.put(R.id.myimageA1, myimageA1);
-        ImageRessources.put(R.id.myimageB1, myimageB1);
-        ImageRessources.put(R.id.myimageC1, myimageC1);
-        ImageRessources.put(R.id.myimageD1, myimageD1);
-        ImageRessources.put(R.id.myimageE1, myimageE1);
-        ImageRessources.put(R.id.myimageF1, myimageF1);
-        ImageRessources.put(R.id.myimageG1, myimageG1);
-        ImageRessources.put(R.id.myimageH1, myimageH1);
-        ImageRessources.put(R.id.myimageI1, myimageI1);
+        ImageRessources.put(R.id.knightA1, knightA1);
+        ImageRessources.put(R.id.knightB1, knightB1);
+        ImageRessources.put(R.id.knightC1, knightC1);
+        ImageRessources.put(R.id.knightD1, knightD1);
+        ImageRessources.put(R.id.knightE1, knightE1);
+        ImageRessources.put(R.id.knightF1, knightF1);
+        ImageRessources.put(R.id.knightG1, knightG1);
+        ImageRessources.put(R.id.knightH1, knightH1);
+        ImageRessources.put(R.id.knightI1, knightI1);
 
-        ImageRessources.put(R.id.myimageA0, myimageA0);
-        ImageRessources.put(R.id.myimageB0, myimageB0);
-        ImageRessources.put(R.id.myimageC0, myimageC0);
-        ImageRessources.put(R.id.myimageD0, myimageD0);
-        ImageRessources.put(R.id.myimageE0, myimageE0);
-        ImageRessources.put(R.id.myimageF0, myimageF0);
-        ImageRessources.put(R.id.myimageG0, myimageG0);
-        ImageRessources.put(R.id.myimageH0, myimageH0);
-        ImageRessources.put(R.id.myimageI0, myimageI0);
+        ImageRessources.put(R.id.golemA0, golemA0);
+        ImageRessources.put(R.id.unicornB0, unicornB0);
+        ImageRessources.put(R.id.pegasusC0, pegasusC0);
+        ImageRessources.put(R.id.djinnD0, djinnD0);
+        ImageRessources.put(R.id.mageE0, mageE0);
+        ImageRessources.put(R.id.phoenixF0, phoenixF0);
+        ImageRessources.put(R.id.pegasusG0, pegasusG0);
+        ImageRessources.put(R.id.unicornH0, unicornH0);
+        ImageRessources.put(R.id.golemI0, golemI0);
     }
 
 
@@ -485,7 +487,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void ResetForegroundMap() {
         a8.removeAllViews();
-        myimageA8.setImageResource(R.drawable.ogre);
+        ogreA8.setImageResource(R.drawable.ogre);
         b8.removeAllViews();
         c8.removeAllViews();
         d8.removeAllViews();
@@ -575,45 +577,45 @@ public class MainActivity extends AppCompatActivity {
         h0.removeAllViews();
         i0.removeAllViews();
 
-        a8.addView(myimageA8);
-        b8.addView(myimageB8);
-        c8.addView(myimageC8);
-        d8.addView(myimageD8);
-        e8.addView(myimageE8);
-        f8.addView(myimageF8);
-        g8.addView(myimageG8);
-        h8.addView(myimageH8);
-        i8.addView(myimageI8);
+        a8.addView(ogreA8);
+        b8.addView(basiliskB8);
+        c8.addView(whichC8);
+        d8.addView(devilD8);
+        e8.addView(sorcererE8);
+        f8.addView(dragonF8);
+        g8.addView(whichG8);
+        h8.addView(basiliskH8);
+        i8.addView(ogreI8);
 
-        a7.addView(myimageA7);
-        b7.addView(myimageB7);
-        c7.addView(myimageC7);
-        d7.addView(myimageD7);
-        e7.addView(myimageE7);
-        f7.addView(myimageF7);
-        g7.addView(myimageG7);
-        h7.addView(myimageH7);
-        i7.addView(myimageI7);
+        a7.addView(goblinA7);
+        b7.addView(goblinB7);
+        c7.addView(goblinC7);
+        d7.addView(goblinD7);
+        e7.addView(goblinE7);
+        f7.addView(goblinF7);
+        g7.addView(goblinG7);
+        h7.addView(goblinH7);
+        i7.addView(goblinI7);
 
-        a1.addView(myimageA1);
-        b1.addView(myimageB1);
-        c1.addView(myimageC1);
-        d1.addView(myimageD1);
-        e1.addView(myimageE1);
-        f1.addView(myimageF1);
-        g1.addView(myimageG1);
-        h1.addView(myimageH1);
-        i1.addView(myimageI1);
+        a1.addView(knightA1);
+        b1.addView(knightB1);
+        c1.addView(knightC1);
+        d1.addView(knightD1);
+        e1.addView(knightE1);
+        f1.addView(knightF1);
+        g1.addView(knightG1);
+        h1.addView(knightH1);
+        i1.addView(knightI1);
 
-        a0.addView(myimageA0);
-        b0.addView(myimageB0);
-        c0.addView(myimageC0);
-        d0.addView(myimageD0);
-        e0.addView(myimageE0);
-        f0.addView(myimageF0);
-        g0.addView(myimageG0);
-        h0.addView(myimageH0);
-        i0.addView(myimageI0);
+        a0.addView(golemA0);
+        b0.addView(unicornB0);
+        c0.addView(pegasusC0);
+        d0.addView(djinnD0);
+        e0.addView(mageE0);
+        f0.addView(phoenixF0);
+        g0.addView(pegasusG0);
+        h0.addView(unicornH0);
+        i0.addView(golemI0);
     }
 
     /**
@@ -666,6 +668,14 @@ public class MainActivity extends AppCompatActivity {
         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
 
             currentImage = theImage;
+            if (theImage == null) {
+                return false;
+            }
+            if (theImage == knightA1 || theImage == knightB1 || theImage == knightC1 || theImage == knightD1 || theImage == knightE1 ||
+                theImage == knightF1 || theImage == knightG1 || theImage == knightH1 || theImage == knightI1) {
+                knightSelected = true;
+            }
+
 
             ClipData data = ClipData.newPlainText("", "");
             DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
@@ -714,27 +724,66 @@ public class MainActivity extends AppCompatActivity {
                 ViewGroup owner = (ViewGroup) view.getParent();
                 owner.removeView(view);
 
-                System.runFinalization();
-                System.gc();
-                /*
-                int drawableID = R.drawable.a0;
-                try {
-                    tmp = "a" + String.valueOf(++index);
-                    drawableID = getResources().getIdentifier(tmp, "drawable", getPackageName());
-                    currentImage.setImageResource(drawableID);
-                    System.runFinalization();
-                    System.gc();
-                } catch (Exception ex) {
-                    errHandler(ex);
-                }
-                index%=128;
-                */
-
                 LinearLayout container = (LinearLayout) v;
+
+                int viewId = view.getId();
+                int containerId = container.getId();
+                int childViewId = -1;
+                boolean enterBattleMode = false;
+                String figure1 = "", figure2 = "";
+
+                String viewDbgInfo = "Added view id: " + String.valueOf(view.getId()) + " to container id: " + String.valueOf(container.getId()) + " \r\n";
+
+                String[] figures = {"ogreA8", "basiliskB8", "whichC8", "devilD8", "sorcererE8", "dragonF8", "whichG8", "basiliskH8", "ogreI8",
+                        "goblinA7", "goblinB7", "goblinC7", "goblinD7", "goblinE7", "goblinF7", "goblinG7", "goblinH7", "goblinI7",
+                        "knightA1", "knightB1", "knightC1", "knightD1", "knightE1", "knightF1", "knightG1", "knightH1", "knightI1",
+                        "golemA0", "unicornB0", "pegasusC0", "djinnD0", "mageE0", "phoenixF0", "pegasusG0", "unicornH0", "golemI0"};
+
+                for (String droppedFigure: figures) {
+                    //Do your stuff here
+                    int myId = getApplicationContext().getResources().getIdentifier(droppedFigure, "id", getApplicationContext().getPackageName());
+                    if (viewId == myId) {
+                        String figureString = "Dropped " + droppedFigure + " \r\n";
+                        showMessage(figureString);
+                        figure1 = droppedFigure;
+                        viewDbgInfo += figureString;
+                    }
+                }
+
+
+                int childViewCount = container.getChildCount();
+                for (int vc = 0; vc < childViewCount; vc++) {
+
+                    childViewId = container.getChildAt(vc).getId();
+                    viewDbgInfo += "child view " + String.valueOf(vc) + " id: " + childViewId + " \r\n";
+
+                    for (String containingFigure: figures) {
+                        //Do your stuff here
+                        int myId = getApplicationContext().getResources().getIdentifier(containingFigure, "id", getApplicationContext().getPackageName());
+                        if (childViewId == myId) {
+                            String figureString = "Containing " + containingFigure + " \r\n";
+                            showMessage(figureString);
+                            viewDbgInfo += figureString;
+                            figure2 = containingFigure;
+                            enterBattleMode = true;
+                        }
+                    }
+                }
+
                 container.addView(view, 0);
                 // container.addView(view);
                 view.setVisibility(View.VISIBLE);
 
+                showMessage(viewDbgInfo, Toast.LENGTH_LONG);
+
+
+                if (enterBattleMode) {
+
+                    Intent intent = new Intent(this, BattleModeActivity.class);
+                    intent.putExtra("Figure1", figure1);
+                    intent.putExtra("Figure2", figure2);
+                    startActivity(intent);
+                }
                 break;
             case DragEvent.ACTION_DRAG_ENDED:
                 v.setBackground(normalShape);
@@ -840,15 +889,22 @@ public class MainActivity extends AppCompatActivity {
      * @param text to display
      */
     private void showMessage(CharSequence text) {
+        showMessage(text, Toast.LENGTH_SHORT);
+    }
 
+    /**
+     * showMessage shows a new Toast dynamic message
+     * @param text to display
+     * @param duration time to display
+     */
+    private void showMessage(CharSequence text, int duration) {
         if (text != null && text != "") {
             Context context = getApplicationContext();
-            int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
         }
-
     }
+
 
     /**
      * showError simple dummy error handler
