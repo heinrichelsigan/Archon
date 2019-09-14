@@ -17,7 +17,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageA8"
+            android:id="@+id/ogreA8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ogre" />
@@ -32,7 +32,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageB8"
+            android:id="@+id/basiliskB8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/basilisk" />
@@ -47,7 +47,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageC8"
+            android:id="@+id/whichC8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/which" />
@@ -62,7 +62,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageD8"
+            android:id="@+id/devilD8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/devil" />
@@ -77,7 +77,7 @@
         android:background="@drawable/bgblackdiamond">
 
         <ImageView
-            android:id="@+id/myimageE8"
+            android:id="@+id/sorcererE8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/sorcerer" />
@@ -92,7 +92,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageF8"
+            android:id="@+id/dragonF8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/dragon" />
@@ -107,7 +107,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageG8"
+            android:id="@+id/whichG8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/which" />
@@ -122,7 +122,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageH8"
+            android:id="@+id/basiliskH8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/basilisk" />
@@ -137,7 +137,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageI8"
+            android:id="@+id/ogreI8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ogre" />
@@ -153,7 +153,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageA7"
+            android:id="@+id/goblinA7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/goblin" />
@@ -168,7 +168,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageB7"
+            android:id="@+id/goblinB7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/goblin" />
@@ -183,7 +183,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageC7"
+            android:id="@+id/goblinC7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/goblin" />
@@ -198,7 +198,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageD7"
+            android:id="@+id/goblinD7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/goblin" />
@@ -213,7 +213,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageE7"
+            android:id="@+id/goblinE7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/goblin" />
@@ -228,7 +228,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageF7"
+            android:id="@+id/goblinF7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/goblin" />
@@ -243,7 +243,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageG7"
+            android:id="@+id/goblinG7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/goblin" />
@@ -258,7 +258,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageH7"
+            android:id="@+id/goblinH7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/goblin" />
@@ -273,7 +273,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageI7"
+            android:id="@+id/goblinI7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/goblin" />
@@ -743,7 +743,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageA1"
+            android:id="@+id/knightA1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/knight" />
@@ -758,7 +758,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageB1"
+            android:id="@+id/knightB1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/knight" />
@@ -773,7 +773,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageC1"
+            android:id="@+id/knightC1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/knight" />
@@ -788,7 +788,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageD1"
+            android:id="@+id/knightD1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/knight" />
@@ -803,7 +803,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageE1"
+            android:id="@+id/knightE1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/knight" />
@@ -818,7 +818,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageF1"
+            android:id="@+id/knightF1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/knight" />
@@ -833,7 +833,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageG1"
+            android:id="@+id/knightG1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/knight" />
@@ -848,7 +848,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageH1"
+            android:id="@+id/knightH1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/knight" />
@@ -863,7 +863,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageI1"
+            android:id="@+id/knightI1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/knight" />
@@ -878,7 +878,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageA0"
+            android:id="@+id/golemA0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/golem" />
@@ -893,7 +893,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageB0"
+            android:id="@+id/unicornB0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/unicorn" />
@@ -908,7 +908,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageC0"
+            android:id="@+id/pegasusC0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/pegasus" />
@@ -923,7 +923,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageD0"
+            android:id="@+id/djinnD0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/djinn" />
@@ -938,7 +938,7 @@
         android:background="@drawable/bgblackdiamond">
 
         <ImageView
-            android:id="@+id/myimageE0"
+            android:id="@+id/mageE0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/mage" />
@@ -953,7 +953,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageF0"
+            android:id="@+id/phoenixF0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/phoenix" />
@@ -968,7 +968,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageG0"
+            android:id="@+id/pegasusG0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/pegasus" />
@@ -983,7 +983,7 @@
         android:background="@drawable/bgwhite">
 
         <ImageView
-            android:id="@+id/myimageH0"
+            android:id="@+id/unicornH0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/unicorn" />
@@ -998,7 +998,7 @@
         android:background="@drawable/bgblack">
 
         <ImageView
-            android:id="@+id/myimageI0"
+            android:id="@+id/golemI0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/golem" />
