@@ -85,7 +85,6 @@ public class BattleModeActivity extends AppCompatActivity {
             }
         }
 
-
         addListenerOnClickables();
 
     }
