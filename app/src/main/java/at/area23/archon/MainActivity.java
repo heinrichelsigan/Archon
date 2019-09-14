@@ -745,6 +745,7 @@ public class MainActivity extends AppCompatActivity {
                     if (viewId == myId) {
                         String figureString = "Dropped " + droppedFigure + " \r\n";
                         showMessage(figureString);
+
                         figure1 = droppedFigure;
                         viewDbgInfo += figureString;
                     }
@@ -759,7 +760,8 @@ public class MainActivity extends AppCompatActivity {
 
                     for (String containingFigure: figures) {
                         //Do your stuff here
-                        int myId = getApplicationContext().getResources().getIdentifier(containingFigure, "id", getApplicationContext().getPackageName());
+                        int myId = getApplicationContext().getResources().getIdentifier(
+                                containingFigure, "id", getApplicationContext().getPackageName());
                         if (childViewId == myId) {
                             String figureString = "Containing " + containingFigure + " \r\n";
                             showMessage(figureString);
@@ -778,7 +780,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if (enterBattleMode) {
-
+                    // TODO: Define Figure[12] as constant
                     Intent intent = new Intent(this, BattleModeActivity.class);
                     intent.putExtra("Figure1", figure1);
                     intent.putExtra("Figure2", figure2);
