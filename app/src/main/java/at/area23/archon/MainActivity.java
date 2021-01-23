@@ -49,8 +49,9 @@ import androidx.appcompat.view.menu.ShowableListMenu;
 import java.util.Objects;
 import java.util.HashMap;
 import java.util.ArrayList;
+import at.area23.archon.BaseMainActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseMainActivity  {
 
     LinearLayout a8, b8, c8, d8, e8, f8, g8, h8, i8;
     LinearLayout a7, b7, c7, d7, e7, f7, g7, h7, i7;
@@ -69,22 +70,25 @@ public class MainActivity extends AppCompatActivity {
     ImageView golemA0, unicornB0, pegasusC0, djinnD0, mageE0, phoenixF0, pegasusG0, unicornH0, golemI0;
     ImageView currentImage;
 
-    Menu myMenu;
-
     HashMap<Integer,ImageView> ImageRessources = new HashMap<Integer,ImageView>();
     HashMap<Integer, LinearLayout> LinearLayoutRessources = new HashMap<Integer, LinearLayout>();
 
     int index = 4;
-    volatile int errNum = 0;
-    String tmp = "";
+
     volatile boolean started = false;
     volatile int startedTimes = 0;
     volatile boolean knightSelected = false;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
+
+        RessourceViewHashMap(rootView, viewMap);
 
         InitLinearLayoutArchonFields();
         InitLinearLayoutRessourcesMap();
@@ -241,12 +245,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     /**
      * Add local variables images corresponding to R.id ressources to ImageRessources HashMap
      */
     private void InitImageRessourcesMap() {
         // Clear Ressource Map first to avoid duplicated entries in HashMap, when method is called more than once
+
+
         ImageRessources.clear();
+
         // Init image ressource map
         ImageRessources.put(R.id.ogreA8, ogreA8);
         ImageRessources.put(R.id.basiliskB8, basiliskB8);
@@ -776,7 +784,7 @@ public class MainActivity extends AppCompatActivity {
                 // container.addView(view);
                 view.setVisibility(View.VISIBLE);
 
-                showMessage(viewDbgInfo, Toast.LENGTH_LONG);
+                showMessage(viewDbgInfo, false);
 
 
                 if (enterBattleMode) {
@@ -797,7 +805,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -807,29 +814,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_start) {
-            startGame();
-            return true;
+    public boolean actionMenuItem(int itemId, MenuItem item, Menu parentMenu) {
+        if (itemId >= 0 && item.getItemId() == itemId) {
+            if (itemId == R.id.action_start) {
+                startGame();
+                return true;
+            }
+            if (itemId == R.id.action_stop) {
+                stopGame();
+                return true;
+            }
+            if (itemId == R.id.action_help) {
+                showHelp();
+                return true;
+            }
         }
-        if (id == R.id.action_stop) {
-            stopGame();
-            return true;
-        }
-        if (id == R.id.action_help) {
-            showHelp();
-            return true;
-        }
-
-
-        return super.onOptionsItemSelected(item);
+        // we fall through by default
+        return super.actionMenuItem(itemId, item, parentMenu);
     }
+
 
     /**
      * startGame() starts a new game
@@ -874,56 +877,20 @@ public class MainActivity extends AppCompatActivity {
      * showHelp() prints out help text
      */
     public void showHelp() {
-        // try {
-        //     Thread.currentThread().sleep(10);
-        // } catch (Exception exInt) {
-        //     errHandler(exInt);
-        // }
-        // tDbg.setText(R.string.help_text);
 
         Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
     }
 
+    /*
+    protected void startIdent() {
 
-    /**
-     * showMessage shows a new Toast dynamic message
-     * @param text to display
+        Intent intent = new Intent(this, ClientActivity.class);
+        intent.putExtra("Figure1", figure1);
+        intent.putExtra("Figure2", figure2);
+        startActivity(intent);
+     }
+     /*
      */
-    private void showMessage(CharSequence text) {
-        showMessage(text, Toast.LENGTH_SHORT);
-    }
-
-    /**
-     * showMessage shows a new Toast dynamic message
-     * @param text to display
-     * @param duration time to display
-     */
-    private void showMessage(CharSequence text, int duration) {
-        if (text != null && text != "") {
-            Context context = getApplicationContext();
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
-        }
-    }
-
-
-    /**
-     * showError simple dummy error handler
-     * @param myErr java.lang.Throwable
-     */
-    void showError(java.lang.Throwable myErr) {
-
-        if (myErr != null) {
-            CharSequence text = "CRITICAL ERROR #" + String.valueOf((++errNum)) + " " + myErr.getMessage() + "\nMessage: " + myErr.getLocalizedMessage() + "\n";
-
-            Context context = getApplicationContext();
-            int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
-
-            myErr.printStackTrace();
-        }
-    }
 
 }
