@@ -13,4 +13,5 @@
     <string name="string_started">Game started.</string>
     <string name="string_stopped">Game stopped.</string>
     <string name="string_notstarted">Game isn\'t started, click start in main menu.</string>
+    <string name="gridLayout">gridLayout</string>
 </resources>

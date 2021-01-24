@@ -1,10 +1,10 @@
 /*
-*
-* @author           Heinrich Elsigan
-* @version          V 1.0.1
-* @since            API 27 Oreo
-*
-*/
+ *
+ * @author           Heinrich Elsigan
+ * @version          V 1.0.1
+ * @since            API 27 Oreo 8.1
+ *
+ */
 /*
 	Copyright (C) 2019 Heinrich Elsigan (heinrich.elsigan@area23.at)
 

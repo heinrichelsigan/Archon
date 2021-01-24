@@ -1,10 +1,10 @@
 /*
-*
-* @author           Heinrich Elsigan
-* @version          V 1.0.1
-* @since            API 27 Oreo
-*
-*/
+ *
+ * @author           Heinrich Elsigan
+ * @version          V 1.0.1
+ * @since            API 27 Oreo 8.1
+ *
+ */
 /*
 	Copyright (C) 2019 Heinrich Elsigan (heinrich.elsigan@area23.at)
 
@@ -84,10 +84,9 @@ public class MainActivity extends BaseMainActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_main);
 
+        rootView = getWindow().getDecorView().getRootView();
         RessourceViewHashMap(rootView, viewMap);
 
         InitLinearLayoutArchonFields();
@@ -813,21 +812,29 @@ public class MainActivity extends BaseMainActivity  {
         return true;
     }
 
+    /**
+     * actionMenuItem - you must implement that method for your purpose
+     * @param itemId - ressource Id of menu item
+     * @param item - MenuItem item entity
+     * @param parentMenu - parent Menu instance, where the menu item belongs to
+     * @return true --> Event Consumed here, now It should not be forwarded for other event
+     * 			false --> Forward for other event to get consumed
+     */
     @Override
     public boolean actionMenuItem(int itemId, MenuItem item, Menu parentMenu) {
         if (itemId >= 0 && item.getItemId() == itemId) {
             if (itemId == R.id.action_start) {
                 startGame();
-                return true;
             }
             if (itemId == R.id.action_stop) {
                 stopGame();
-                return true;
             }
             if (itemId == R.id.action_help) {
                 showHelp();
-                return true;
+            } else {
+                return false;
             }
+            return true;
         }
         // we fall through by default
         return super.actionMenuItem(itemId, item, parentMenu);
@@ -851,6 +858,9 @@ public class MainActivity extends BaseMainActivity  {
             InitLinearLayoutRessourcesMap();
             InitImageArchonFields();
             InitImageRessourcesMap();
+
+            rootView = getWindow().getDecorView().getRootView();
+            RessourceViewHashMap(rootView, viewMap);
 
             InitLinearLayoutOnDragListeners();
             InitImageOnTouchListeners();

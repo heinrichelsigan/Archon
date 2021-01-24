@@ -6,9 +6,11 @@
     android:columnCount="9"
     android:orientation="vertical"
     android:rowCount="9"
-    android:stretchMode="columnWidth">
+    android:stretchMode="columnWidth"
+    android:id="@+id/gridLayout"
+    android:tag="@string/gridLayout">
 
-    <LinearLayout
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res/android"
         android:id="@+id/A8"
         android:layout_width="36dp"
         android:layout_height="36dp"
@@ -724,7 +726,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/I2"
+         android:id="@+id/I2"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_row="6"
