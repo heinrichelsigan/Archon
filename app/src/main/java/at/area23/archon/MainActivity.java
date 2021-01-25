@@ -79,8 +79,6 @@ public class MainActivity extends BaseMainActivity  {
     volatile int startedTimes = 0;
     volatile boolean knightSelected = false;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -201,7 +199,7 @@ public class MainActivity extends BaseMainActivity  {
      * Init local variables to images inside LinearLayout Archon (chess) board fields
      */
     private void InitImageArchonFields() {
-
+        int[] rids = getResources().getIntArray(R.array.rid);
         ogreA8 = (ImageView) findViewById(R.id.ogreA8);
         basiliskB8 = (ImageView) findViewById(R.id.basiliskB8);
         whichC8 = (ImageView) findViewById(R.id.whichC8);

@@ -7,6 +7,7 @@
         <item>#FF0000FF</item>
     </array>
 
+    <item name="b_a1" type="integer"></item>
 
     <array name="rid">
         <item name="board_a4"  type="id" format="integer">400040</item>

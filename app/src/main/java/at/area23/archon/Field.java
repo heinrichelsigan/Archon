@@ -7,6 +7,7 @@ public class Field {
     char x = '\0';
     String fieldName = null;
 
+
     public Field(char xColumn, int yRpw) {
         y = yRpw;
         x = xColumn;
