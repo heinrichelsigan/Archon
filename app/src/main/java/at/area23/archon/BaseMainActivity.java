@@ -23,11 +23,17 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.ShowableListMenu;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Field;
 import java.util.Objects;
 import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import at.area23.archon.R;
+import static android.R.*;
+import static android.R.id.*;
+import static android.R.id;
 
 
 public class BaseMainActivity extends AppCompatActivity {
@@ -39,6 +45,7 @@ public class BaseMainActivity extends AppCompatActivity {
     protected String tmp = "";
 
     protected Menu myMenu;
+    protected AtomicInteger atomInt;
     protected HashMap<Integer, android.view.View> viewMap;
     protected android.view.View rootView = null;
 
@@ -64,10 +71,10 @@ public class BaseMainActivity extends AppCompatActivity {
      * @return number of loop calls of tecursive method
      */
     protected int hashMapViewRecursivley(
-            android.view.View aView,
-            java.util.HashMap<Integer, android.view.View> viewHashMap,
+            @NotNull android.view.View aView,
+            @NotNull java.util.HashMap<Integer, android.view.View> viewHashMap,
             String mapMsg,
-            int loopCnt,
+            AtomicInteger loopCnt,
             int rDepth
     ) {
 
@@ -94,11 +101,13 @@ public class BaseMainActivity extends AppCompatActivity {
                     mapMsg += rDepth + "\t:" + "view(" + viewId + ") \t -> child(" + childId + ") \t -> " +
                             this.getAll4RId(viewId) + "\r\n";
                 }
-                loopCnt += hashMapViewRecursivley(childView, viewHashMap, mapMsg, ++loopCnt, ++rDepth);
+
+                loopCnt.set(loopCnt.incrementAndGet());
+                int recCount = hashMapViewRecursivley(childView, viewHashMap, mapMsg, loopCnt, ++rDepth);
             }
         }
 
-        return loopCnt;
+        return loopCnt.intValue();
     }
 
 
@@ -129,9 +138,11 @@ public class BaseMainActivity extends AppCompatActivity {
             mapMsg += "getting rootView from decor view of current window.\r\n";
         }
 
-        int loops = 0;
+        AtomicInteger loops = new AtomicInteger();
+        loops.set(0);
+
         int runnedCycles = hashMapViewRecursivley(rootView, viewHashMap, mapMsg, loops, 0);
-        if (runnedCycles > 0 && viewHashMap.size() > 0) {
+        if (runnedCycles != 0 && viewHashMap.size() > 0) {
             mapMsg = "HashMap builded with " + viewHashMap.size() + " R.Ids as keys after running " + runnedCycles + " total cycles.\r\n" + mapMsg;
             showMessage(mapMsg, false);
         } else {
@@ -148,7 +159,6 @@ public class BaseMainActivity extends AppCompatActivity {
      * @param menu - the menu item, that has been selected
      * @return true, if menu successfully created, otherwise false
      */
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         myMenu = menu;
@@ -223,7 +233,7 @@ public class BaseMainActivity extends AppCompatActivity {
 
         Class<R.id> c = R.id.class;
 
-        at.area23.archon.R.id rObj = (at.area23.archon.R.id) new Object();
+        android.R.id rObj = new android.R.id();
         // id object = new id();
         // R.id object = new R.id()
         Field[] fields;

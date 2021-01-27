@@ -69,9 +69,11 @@ public class MainActivity extends BaseMainActivity  {
     ImageView knightA1, knightB1, knightC1, knightD1, knightE1, knightF1, knightG1, knightH1, knightI1;
     ImageView golemA0, unicornB0, pegasusC0, djinnD0, mageE0, phoenixF0, pegasusG0, unicornH0, golemI0;
     ImageView currentImage;
+    Drawable savedBackground;
 
     HashMap<Integer,ImageView> ImageRessources = new HashMap<Integer,ImageView>();
     HashMap<Integer, LinearLayout> LinearLayoutRessources = new HashMap<Integer, LinearLayout>();
+    HashMap<Integer, Drawable> dragNDropMap = new HashMap<>();
 
     int index = 4;
 
@@ -660,7 +662,7 @@ public class MainActivity extends BaseMainActivity  {
 
     /**
      * onTouchListener fired, when view with image is touched
-     * @param v view which is touched
+     * @param view which is touched
      * @param motionEvent specific devent
      * @param theImage image in the view, who is touched
      */
@@ -669,6 +671,7 @@ public class MainActivity extends BaseMainActivity  {
             showMessage(getString(R.string.string_notstarted));
             return false;
         }
+
 
         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
 
@@ -681,10 +684,12 @@ public class MainActivity extends BaseMainActivity  {
                 knightSelected = true;
             }
 
+            dragNDropMap = new HashMap<>();
+            dragNDropMap.put(view.getId(), view.getBackground());
 
             ClipData data = ClipData.newPlainText("", "");
             DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-            view.startDragAndDrop(data, shadowBuilder, view, 0);
+            view.startDragAndDrop(data, shadowBuilder, view, View.DRAG_FLAG_GLOBAL);
             //view.startDrag(data, shadowBuilder, view, 0);
             view.setVisibility(View.INVISIBLE);
 
@@ -714,14 +719,25 @@ public class MainActivity extends BaseMainActivity  {
         switch (event.getAction()) {
             case DragEvent.ACTION_DRAG_STARTED:
                 // do nothing
+                savedBackground = v.getBackground();
+                if (!dragNDropMap.containsKey(v.getId())) {
+                    dragNDropMap.put(v.getId(), savedBackground);
+                }
                 break;
             case DragEvent.ACTION_DRAG_ENTERED:
-                v.setBackground(enterShape);
+                savedBackground = v.getBackground();
+                if (!dragNDropMap.containsKey(v.getId())) {
+                    dragNDropMap.put(v.getId(), savedBackground);
+                }
                 v.setBackgroundDrawable(enterShape);
+                v.setBackground(enterShape);
                 break;
             case DragEvent.ACTION_DRAG_EXITED:
-                v.setBackground(normalShape);
-                v.setBackgroundDrawable(normalShape);
+                if (dragNDropMap.containsKey(v.getId())) {
+                    Drawable dr = dragNDropMap.get(v.getId());
+                    if (dr != null)
+                        v.setBackground(dr);
+                }
                 break;
             case DragEvent.ACTION_DROP:
                 // Dropped, reassign View to ViewGroup
@@ -778,11 +794,13 @@ public class MainActivity extends BaseMainActivity  {
                 }
 
                 container.addView(view, 0);
+                if (savedBackground != null)
+                    container.setBackground(savedBackground);
+
                 // container.addView(view);
                 view.setVisibility(View.VISIBLE);
 
                 showMessage(viewDbgInfo, false);
-
 
                 if (enterBattleMode) {
                     // TODO: Define Figure[12] as constant
@@ -793,22 +811,29 @@ public class MainActivity extends BaseMainActivity  {
                 }
                 break;
             case DragEvent.ACTION_DRAG_ENDED:
-                v.setBackground(normalShape);
-                // v.setBackgroundDrawable(normalShape);
+                if (dragNDropMap.containsKey(v.getId())) {
+                    Drawable dr = dragNDropMap.get(v.getId());
+                    if (dr != null)
+                        v.setBackground(dr);
+                }
+                break;
             default:
                 break;
         }
-        ResetBackgroundMap();
+        // ResetBackgroundMap();
         return true;
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        // super.onCreateOptionsMenu(menu);
         myMenu = menu;
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
     /**
      * actionMenuItem - you must implement that method for your purpose
