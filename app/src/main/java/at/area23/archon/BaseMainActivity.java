@@ -13,6 +13,8 @@ import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.media.AudioAttributes;
+import android.media.MediaPlayer;
 import android.provider.Settings;
 import android.os.Bundle;
 import android.view.Menu;
@@ -336,4 +338,48 @@ public class BaseMainActivity extends AppCompatActivity {
      */
     public void showException(java.lang.Exception myEx) { showError(myEx, true); }
 
+
+
+
+
+    /**
+     * playMediaFromUri plays any sound media from an internet uri
+     * @param url - the full quaöofoed url accessor
+     */
+    public void playMediaFromUri(String url) {
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        mediaPlayer.setAudioAttributes(
+                new AudioAttributes.Builder()
+                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                        .setUsage(AudioAttributes.USAGE_MEDIA)
+                        .build()
+        );
+        try {
+            mediaPlayer.setDataSource(url);
+            mediaPlayer.prepare(); // might take long! (for buffering, etc)
+            mediaPlayer.start();
+        } catch (Exception exi) {
+            showError(exi, true);
+        }
+    }
+
+    public void playTakeStone() {
+        playMediaFromUri("https://github.com/heinrichelsigan/Archon/blob/master/app/src/main/res/raw/takestone.wav?raw=true");
+    }
+
+    public void playDropStone() {
+        playMediaFromUri("https://github.com/heinrichelsigan/Archon/blob/master/app/src/main/res/raw/dropstone.wav?raw=true");
+    }
+
+    public void playRawCompleted() {
+        playMediaFromUri("https://github.com/heinrichelsigan/Archon/blob/master/app/src/main/res/raw/rawcompleted.wav?raw=true");
+    }
+
+    public void playErrorDoubleColor() {
+        playMediaFromUri("https://github.com/heinrichelsigan/Archon/blob/master/app/src/main/res/raw/error1dobblecolor.wav?raw=true");
+    }
+
+    public void playErrorForbiddenPattern() {
+        playMediaFromUri("https://github.com/heinrichelsigan/Archon/blob/master/app/src/main/res/raw/error2forbiddenpattern.wav?raw=true");
+    }
 }

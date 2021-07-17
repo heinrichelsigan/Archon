@@ -789,6 +789,8 @@ public class MainActivity extends BaseMainActivity  {
                             viewDbgInfo += figureString;
                             figure2 = containingFigure;
                             enterBattleMode = true;
+                        } else {
+                            playDropStone();
                         }
                     }
                 }
@@ -803,6 +805,7 @@ public class MainActivity extends BaseMainActivity  {
                 showMessage(viewDbgInfo, false);
 
                 if (enterBattleMode) {
+                    playRawCompleted();
                     // TODO: Define Figure[12] as constant
                     Intent intent = new Intent(this, BattleModeActivity.class);
                     intent.putExtra("Figure1", figure1);
