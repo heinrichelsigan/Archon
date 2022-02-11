@@ -5,6 +5,15 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/heinr/source/Archon/app/src/main/res/layout/activity_about.xml" value="0.1" />
+        <entry key="..\:/Users/heinr/source/Archon/app/src/main/res/layout/activity_battlemode.xml" value="0.1" />
+        <entry key="..\:/Users/heinr/source/Archon/app/src/main/res/layout/activity_main.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
   <component name="Kotlin2JsCompilerArguments">
     <option name="sourceMapEmbedSources" />
     <option name="sourceMapPrefix" />
