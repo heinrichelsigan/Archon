@@ -45,6 +45,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.ShowableListMenu;
+import androidx.core.content.res.ResourcesCompat;
 
 import java.util.Objects;
 import java.util.HashMap;
@@ -401,7 +402,7 @@ public class MainActivity extends BaseMainActivity  {
         findViewById(R.id.A8).setBackground(getResources().getDrawable(R.drawable.bgblack, getApplicationContext().getTheme()));
         findViewById(R.id.B8).setBackground(getResources().getDrawable(R.drawable.bgwhite, getApplicationContext().getTheme()));
         findViewById(R.id.C8).setBackground(getResources().getDrawable(R.drawable.bgblack, getApplicationContext().getTheme()));
-        findViewById(R.id.D8).setBackground(getResources().getDrawable(R.drawable.bgwhite, getApplicationContext().getTheme()));
+        findViewById(R.id.D8).setBackground(getResources().getDrawable(R.drawable.bgwhite,  getApplicationContext().getTheme()));
         findViewById(R.id.E8).setBackground(getResources().getDrawable(R.drawable.bgblackdiamond, getApplicationContext().getTheme()));
         findViewById(R.id.F8).setBackground(getResources().getDrawable(R.drawable.bgwhite, getApplicationContext().getTheme()));
         findViewById(R.id.G8).setBackground(getResources().getDrawable(R.drawable.bgblack, getApplicationContext().getTheme()));
@@ -712,8 +713,8 @@ public class MainActivity extends BaseMainActivity  {
             return false;
         }
 
-        Drawable enterShape = getResources().getDrawable(R.drawable.shape_droptarget, null);
-        Drawable normalShape = getResources().getDrawable(R.drawable.shape, null);
+        Drawable enterShape = getResources().getDrawable(R.drawable.shape_droptarget, getApplicationContext().getTheme());
+        Drawable normalShape = getResources().getDrawable(R.drawable.shape, getApplicationContext().getTheme());
 
         int action = event.getAction();
         switch (event.getAction()) {
