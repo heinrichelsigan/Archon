@@ -1,5 +1,5 @@
 # Archon
-Archon free android port.
+Archon free android port. (Prototype)
 
 Archon is a classic fantasy chess game.
 Archon was first implemented 1983 by Free Fall Associates and one of the first five games published by Electronic Arts.
