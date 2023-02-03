@@ -919,18 +919,7 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
         ResetBackgroundMap();
         ResetForegroundMap();
 
-        if (startedTimes > 0) {
-            InitLinearLayoutArchonFields();
-            InitLinearLayoutRessourcesMap();
-            InitImageArchonFields();
-            InitImageRessourcesMap();
-
-            rootView = getWindow().getDecorView().getRootView();
-            RessourceViewHashMap(rootView, viewMap);
-
-            InitLinearLayoutOnDragListeners();
-            InitImageOnTouchListeners();
-        }
+        startArchon(level, false);
 
         started = true;
         startedTimes++;
