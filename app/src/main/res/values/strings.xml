@@ -13,5 +13,20 @@
     <string name="string_started">Game started.</string>
     <string name="string_stopped">Game stopped.</string>
     <string name="string_notstarted">Game isn\'t started, click start in main menu.</string>
+    <string name="string_battle_count">battleCount!</string>
+    <string name="string_next_level">Next Level</string>
+    <string name="string_replay_level">Replay Level</string>
+    <string name="msg_game_over">Game Over</string>
+    <string name="msg_replay">Replay Level.</string>
+    <string name="msg_level_mode">Pure / Dark</string>
+    <string name="msg_level_switch">Pure Shiny</string>
+    <string name="msg_level_white">Pure Shiny</string>
+    <string name="msg_level_dark">Dark Fog</string>
+    <string name="msg_level_completed">Level won!</string>
+    <string name="msg_next_level">Next Level.</string>
+    <string name="msg_perfect">Perfect!</string>
     <string name="gridLayout">gridLayout</string>
+
+    <string name="s_row0">s_row0</string>
+    <string name="s_row1">s_row0</string>
 </resources>

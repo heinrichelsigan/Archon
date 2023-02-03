@@ -46,13 +46,17 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.ShowableListMenu;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.fragment.app.DialogFragment;
 
 import java.util.Objects;
 import java.util.HashMap;
 import java.util.ArrayList;
-import at.area23.archon.BaseMainActivity;
+import at.area23.archon.dialogfragment.*;
 
-public class MainActivity extends BaseMainActivity  {
+public class MainActivity extends BaseMainActivity implements FinishedLevel.NoticeDialogListener, FinishedLevelPerfect.NoticeDialogListener,
+        GameOver.NoticeDialogListener {
+
+    DialogFragment dialogLevelFinished, dialogGameOver;
 
     LinearLayout a8, b8, c8, d8, e8, f8, g8, h8, i8;
     LinearLayout a7, b7, c7, d7, e7, f7, g7, h7, i7;
@@ -77,29 +81,64 @@ public class MainActivity extends BaseMainActivity  {
     HashMap<Integer, Drawable> dragNDropMap = new HashMap<>();
 
     int index = 4;
+    int level = 0;
+    int battleCount = 0;
+    int playerFiguresCount = 22;
+    int computerFiguresCount = 22;
+    boolean gameOver = false;
 
     volatile boolean started = false;
     volatile int startedTimes = 0;
     volatile boolean knightSelected = false;
 
+    /**
+     * onCreate
+     * @param savedInstanceState - Bundle passed to onCreate
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         rootView = getWindow().getDecorView().getRootView();
-        RessourceViewHashMap(rootView, viewMap);
+
+        level = 0;
+        startArchon(level, true);
+    }
+
+
+    /**
+     * startArchon
+     * @param aLevel - level to start
+     * @param restart - boolean to fully restart
+     */
+    protected void startArchon(int aLevel, boolean restart) {
+        if (level == 0) {
+            setContentView(R.layout.activity_main);
+        } else {
+            setContentView(R.layout.activity_main);
+        }
+
+        int battleCount = 0;
+        int playerFiguresCount = 22;
+        int computerFiguresCount = 22;
 
         InitLinearLayoutArchonFields();
         InitLinearLayoutRessourcesMap();
-
         InitImageArchonFields();
         InitImageRessourcesMap();
 
-        InitImageOnTouchListeners();
-        InitLinearLayoutOnDragListeners();
-    }
+        rootView = getWindow().getDecorView().getRootView();
+        RessourceViewHashMap(rootView, viewMap);
 
+        InitLinearLayoutOnDragListeners();
+        InitImageOnTouchListeners();
+
+        if (restart) {
+            ResetBackgroundMap();
+            ResetForegroundMap();
+        }
+    }
 
     /**
      * Init local variables to LinearLayout Archon (chess) board fields
@@ -929,5 +968,103 @@ public class MainActivity extends BaseMainActivity  {
      }
      /*
      */
+
+
+    /**
+     * showGameOverDialog
+     */
+    public void showGameOverDialog() {
+        if (!gameOver) {
+            gameOver = true;
+            // playL8rHandler.postDelayed(delayScreenShotSound, 25);
+
+            // Create an instance of the dialog fragment and show it
+            dialogGameOver = new GameOver();
+            Bundle dialogArgs = new Bundle();
+            dialogArgs.putInt(getString(R.string.msg_perfect), 0);
+            dialogArgs.putInt(getString(R.string.string_battle_count), battleCount);
+            dialogGameOver.setArguments(dialogArgs);
+            dialogGameOver.setCancelable(false);
+            dialogGameOver.show(getSupportFragmentManager(), "GameOver");
+        }
+    }
+
+    /**
+     * showFinishedLevelPerfectDialog
+     */
+    public void showFinishedLevelPerfectDialog() {
+        // Create an instance of the dialog fragment and show it
+        dialogLevelFinished = new FinishedLevelPerfect();
+        Bundle dialogArgs = new Bundle();
+        dialogArgs.putInt(getString(R.string.msg_perfect), 1);
+        dialogArgs.putInt(getString(R.string.string_battle_count), battleCount);
+        dialogLevelFinished.setArguments(dialogArgs);
+        dialogLevelFinished.setCancelable(false);
+        dialogLevelFinished.show(getSupportFragmentManager(), "FinishedLevelPerfect");
+    }
+
+    /**
+     * showFinishedLevelDialog
+     */
+    public void showFinishedLevelDialog() {
+        int perfect = ((battleCount == playerFiguresCount)) ? 1 : 0;
+        if (perfect == 1) {
+            showFinishedLevelPerfectDialog();
+            return;
+        }
+        // Create an instance of the dialog fragment and show it
+        dialogLevelFinished = FinishedLevel.newInstance(perfect, level);
+        Bundle dialogArgs = new Bundle();
+        dialogArgs.putInt(getString(R.string.msg_perfect), perfect);
+        dialogArgs.putInt(getString(R.string.string_battle_count), battleCount);
+        dialogLevelFinished.setArguments(dialogArgs);
+        dialogLevelFinished.setCancelable(false);
+        dialogLevelFinished.show(getSupportFragmentManager(), "FinishedLevel");
+    }
+
+    /**
+     * onDialogPositiveClick - dialog OK clicked
+     * @param dialog DialogFragment
+     */
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        int nextLvl = (gameOver) ? 0 : level;
+        if (!gameOver && nextLvl < 10)
+            nextLvl++; // when not gameOver && level < 10
+
+        String nxtLvlStr = getString(R.string.action_start) + " " +
+                getString(R.string.string_next_level) +  " \"" + nextLvl + "\".";
+        // showMessage(nxtLvlStr);
+
+        if (dialogLevelFinished != null) {
+            dialogLevelFinished.dismiss();
+            dialogLevelFinished = null;
+        }
+        if (dialogGameOver != null) {
+            dialogGameOver.dismiss();
+            dialogGameOver = null;
+        }
+        startArchon(nextLvl, true);
+    }
+
+    /**
+     * onDialogNegativeClick - dialog Cancel clicked
+     * @param dialog DialogFragment
+     */
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+        String replayLvlStr = getString(R.string.string_replay_level) + ": " + level + ".";
+        // showMessage(replayLvlStr);
+        if (dialogLevelFinished != null) {
+            dialogLevelFinished.dismiss();
+            dialogLevelFinished = null;
+        }
+        if (dialogGameOver != null) {
+            dialogGameOver.dismiss();
+            dialogGameOver = null;
+        }
+
+        startArchon(level, true);
+    }
 
 }
