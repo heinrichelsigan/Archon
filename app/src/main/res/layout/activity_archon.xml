@@ -1,0 +1,1267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhiteShady">
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="36dp"
+        android:columnCount="9"
+        android:orientation="vertical"
+        android:rowCount="9"
+        android:stretchMode="columnWidth"
+        android:id="@+id/gridLayout"
+        android:tag="@string/gridLayout">
+
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res/android"
+            android:id="@+id/A8"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/ogreA8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ogre" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/B8"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/basiliskB8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/basilisk" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/C8"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/whichC8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/which" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/D8"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/devilD8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/devil" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/E8"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:background="@drawable/bgblackdiamond">
+
+            <ImageView
+                android:id="@+id/sorcererE8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sorcerer" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/F8"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/dragonF8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dragon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/G8"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="0"
+            android:layout_column="6"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/whichG8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/which" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/H8"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="0"
+            android:layout_column="7"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/basiliskH8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/basilisk" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/I8"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="0"
+            android:layout_column="8"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/ogreI8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ogre" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/A7"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/goblinA7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/goblin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/B7"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/goblinB7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/goblin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/C7"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/goblinC7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/goblin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/D7"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/goblinD7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/goblin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/E7"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="1"
+            android:layout_column="4"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/goblinE7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/goblin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/F7"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="1"
+            android:layout_column="5"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/goblinF7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/goblin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/G7"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="1"
+            android:layout_column="6"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/goblinG7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/goblin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/H7"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="1"
+            android:layout_column="7"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/goblinH7"
+                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/goblin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/I7"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="1"
+            android:layout_column="8"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/goblinI7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/goblin" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/A6"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/B6"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/C6"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/D6"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/E6"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="2"
+            android:layout_column="4"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/F6"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="2"
+            android:layout_column="5"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/G6"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="2"
+            android:layout_column="6"
+            android:background="@drawable/bgblack">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/H6"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="2"
+            android:layout_column="7"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/I6"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="2"
+            android:layout_column="8"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/A5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/B5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/C5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="3"
+            android:layout_column="2"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/D5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="3"
+            android:layout_column="3"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/E5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="3"
+            android:layout_column="4"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/F5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="3"
+            android:layout_column="5"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/G5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="3"
+            android:layout_column="6"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/H5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="3"
+            android:layout_column="7"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/I5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="3"
+            android:layout_column="8"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/A4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:background="@drawable/bgblackdiamond">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/B4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/C4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="4"
+            android:layout_column="2"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/D4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="4"
+            android:layout_column="3"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/E4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="4"
+            android:layout_column="4"
+            android:background="@drawable/bgblackdiamond">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/F4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="4"
+            android:layout_column="5"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/G4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="4"
+            android:layout_column="6"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/H4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="4"
+            android:layout_column="7"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/I4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="4"
+            android:layout_column="8"
+            android:background="@drawable/bgblackdiamond">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/A3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/B3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/C3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="5"
+            android:layout_column="2"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/D3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="5"
+            android:layout_column="3"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/E3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="5"
+            android:layout_column="4"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/F3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="5"
+            android:layout_column="5"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/G3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="5"
+            android:layout_column="6"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/H3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="5"
+            android:layout_column="7"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/I3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="5"
+            android:layout_column="8"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/A2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/B2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/C2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="6"
+            android:layout_column="2"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/D2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="6"
+            android:layout_column="3"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/E2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="6"
+            android:layout_column="4"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/F2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="6"
+            android:layout_column="5"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/G2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="6"
+            android:layout_column="6"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/H2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="6"
+            android:layout_column="7"
+            android:background="@drawable/bgwhite">
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:id="@+id/I2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="6"
+            android:layout_column="8"
+            android:background="@drawable/bgblack">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/A1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="7"
+            android:layout_column="0"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/knightA1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/knight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/B1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="7"
+            android:layout_column="1"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/knightB1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/knight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/C1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="7"
+            android:layout_column="2"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/knightC1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/knight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/D1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="7"
+            android:layout_column="3"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/knightD1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/knight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/E1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="7"
+            android:layout_column="4"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/knightE1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/knight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/F1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="7"
+            android:layout_column="5"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/knightF1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/knight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/G1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="7"
+            android:layout_column="6"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/knightG1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/knight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/H1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="7"
+            android:layout_column="7"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/knightH1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/knight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/I1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="7"
+            android:layout_column="8"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/knightI1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/knight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/A0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="8"
+            android:layout_column="0"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/golemA0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/golem" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/B0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="8"
+            android:layout_column="1"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/unicornB0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/unicorn" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/C0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="8"
+            android:layout_column="2"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/pegasusC0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pegasus" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/D0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="8"
+            android:layout_column="3"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/djinnD0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/djinn" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/E0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="8"
+            android:layout_column="4"
+            android:background="@drawable/bgblackdiamond">
+
+            <ImageView
+                android:id="@+id/mageE0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mage" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/F0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="8"
+            android:layout_column="5"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/phoenixF0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/phoenix" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/G0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="8"
+            android:layout_column="6"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/pegasusG0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pegasus" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/H0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="8"
+            android:layout_column="7"
+            android:background="@drawable/bgwhite">
+
+            <ImageView
+                android:id="@+id/unicornH0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/unicorn" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/I0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_row="8"
+            android:layout_column="8"
+            android:background="@drawable/bgblack">
+
+            <ImageView
+                android:id="@+id/golemI0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/golem" />
+        </LinearLayout>
+
+
+    </GridLayout>
+
+
+    <GridLayout
+        android:id="@+id/dropBoardLayout"
+        android:layout_marginTop="360dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_width="232dp"
+        android:layout_height="144dp"
+        android:columnWidth="36dp"
+        android:columnCount="6"
+        android:orientation="vertical"
+        android:rowCount="4">
+
+
+        <LinearLayout
+            android:id="@+id/ya0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/bgwhite">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ya1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="@drawable/bgblacklight">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ya2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:background="@drawable/bgwhite">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ya3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:background="@drawable/bgblacklight">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ya4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:background="@drawable/bgwhite">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ya5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:background="@drawable/bgblacklight">
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/yb0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="1"
+            android:layout_column="0">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/yb1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="1"
+            android:layout_column="1">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/yb2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="1"
+            android:layout_column="2">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/yb3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="1"
+            android:layout_column="3">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/yb4"
+            android:layout_width="49dp"
+            android:layout_height="38dp"
+            android:layout_row="1"
+            android:layout_column="4"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/yb5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="1"
+            android:layout_column="5">
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/za0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:background="@drawable/bgblacklight">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/za1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:background="@drawable/bgwhite">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/za2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:background="@drawable/bgblacklight">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/za3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:background="@drawable/bgwhite">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/za4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="2"
+            android:layout_column="4"
+            android:background="@drawable/bgblacklight">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/za5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="2"
+            android:layout_column="5"
+            android:background="@drawable/bgwhite">
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/zb0"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="3"
+            android:layout_column="0">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zb1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="3"
+            android:layout_column="1">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zb2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="3"
+            android:layout_column="3">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zb3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="3"
+            android:layout_column="3">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zb4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="3"
+            android:layout_column="4">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zb5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:orientation="vertical"
+            android:layout_row="3"
+            android:layout_column="5"
+            android:background="@drawable/bgwhite">
+        </LinearLayout>
+
+    </GridLayout>
+
+
+</FrameLayout>

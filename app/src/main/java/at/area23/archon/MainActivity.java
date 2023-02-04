@@ -6,7 +6,7 @@
  *
  */
 /*
-	Copyright (C) 2019 Heinrich Elsigan (heinrich.elsigan@area23.at)
+	Copyleft (C) 2019 - 2023 Heinrich Elsigan (heinrich.elsigan@area23.at)
 
 	Archon is a classic fantasy chess game
 	1st implementation 1983 by Free Fall Associates and one of the first five games published by Electronic Arts.    
@@ -26,9 +26,12 @@ import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.view.DragEvent;
 import android.view.MotionEvent;
@@ -48,6 +51,11 @@ import androidx.appcompat.view.menu.ShowableListMenu;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.DialogFragment;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -119,9 +127,10 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
             setContentView(R.layout.activity_main);
         }
 
-        int battleCount = 0;
-        int playerFiguresCount = 22;
-        int computerFiguresCount = 22;
+        battleCount = 0;
+        playerFiguresCount = 22;
+        computerFiguresCount = 22;
+        started = true;
 
         InitLinearLayoutArchonFields();
         InitLinearLayoutRessourcesMap();
@@ -129,7 +138,7 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
         InitImageRessourcesMap();
 
         rootView = getWindow().getDecorView().getRootView();
-        RessourceViewHashMap(rootView, viewMap);
+        // RessourceViewHashMap(rootView, viewMap);
 
         InitLinearLayoutOnDragListeners();
         InitImageOnTouchListeners();
@@ -830,7 +839,7 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
                             figure2 = containingFigure;
                             enterBattleMode = true;
                         } else {
-                            playDropStone();
+                            playL8rHandler.postDelayed(delayPlayMouthClick, 100);
                         }
                     }
                 }
@@ -845,7 +854,7 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
                 showMessage(viewDbgInfo, false);
 
                 if (enterBattleMode) {
-                    playRawCompleted();
+                    playL8rHandler.postDelayed(delayPlayCCC, 100);
                     // TODO: Define Figure[12] as constant
                     Intent intent = new Intent(this, BattleModeActivity.class);
                     intent.putExtra("Figure1", figure1);
@@ -892,12 +901,40 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
             if (itemId == R.id.action_start) {
                 startGame();
             }
-            if (itemId == R.id.action_stop) {
-                stopGame();
-            }
-            if (itemId == R.id.action_help) {
+            else if (itemId == R.id.action_help) {
                 showHelp();
-            } else {
+            }
+            else if (itemId == R.id.action_about) {
+                showHelp();
+            }
+            else if (itemId == R.id.action_screenshot) {
+                showHelp();
+            }
+            else if (itemId == R.id.action_desintegrate) {
+                showMessage("implement petrify");
+            }
+            else if (itemId == R.id.action_mute) {
+                showMessage("implement mute mage");
+            }
+            else if (itemId == R.id.action_magic_missle) {
+                showMessage("implement magi missle");
+            }
+            else if (itemId == R.id.action_petrify) {
+                showMessage("implement petrify");
+            }
+            else if (itemId == R.id.action_summon_elemental) {
+                showMessage("implement summon elemental");
+            }
+            else if (itemId == R.id.action_resurrect) {
+                showMessage("implement resurrect");
+            }
+            else if (itemId == R.id.action_shift_time) {
+                showMessage("implement shift time");
+            }
+            else if (itemId == R.id.action_exit) {
+                showMessage("implement exit");
+            }
+            else {
                 return false;
             }
             return true;
@@ -912,18 +949,14 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
      */
     public void startGame() {
         if (myMenu != null) {
-            myMenu.findItem(R.id.action_start).setEnabled(false);
-            myMenu.findItem(R.id.action_stop).setEnabled(true);
+            myMenu.findItem(R.id.action_start).setEnabled(true);
+            myMenu.findItem(R.id.action_exit).setEnabled(true);
         }
 
-        ResetBackgroundMap();
-        ResetForegroundMap();
+        startArchon(level, true);
 
-        startArchon(level, false);
-
-        started = true;
         startedTimes++;
-        showMessage(getString(R.string.string_started));
+        showMessage(getString(R.string.string_restarted));
     }
 
     /**
@@ -932,19 +965,10 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
     public void stopGame() {
         started = false;
         if (myMenu != null) {
-            myMenu.findItem(R.id.action_start).setEnabled(true);
-            myMenu.findItem(R.id.action_stop).setEnabled(false);
+            myMenu.findItem(R.id.action_start).setEnabled(false);
+            myMenu.findItem(R.id.action_exit).setEnabled(false);
         }
-        showMessage(getString(R.string.string_stopped));
-    }
-
-    /**
-     * showHelp() prints out help text
-     */
-    public void showHelp() {
-
-        Intent intent = new Intent(this, AboutActivity.class);
-        startActivity(intent);
+        exitApp();
     }
 
     /*

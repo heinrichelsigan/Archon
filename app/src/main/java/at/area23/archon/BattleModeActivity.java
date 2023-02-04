@@ -6,12 +6,12 @@
  *
  */
 /*
-	Copyright (C) 2019 Heinrich Elsigan (heinrich.elsigan@area23.at)
+	Copyleft (C) 2019 - 2023 Heinrich Elsigan (heinrich.elsigan@area23.at)
 
 	Archon is a classic fantasy chess game
-	1st implementation 1983 by Free Fall Associates and one of the first five games published by Electronic Arts.    
+	1st implementation 1983 by Free Fall Associates and one of the first five games published by Electronic Arts.
 	https://en.wikipedia.org/wiki/Archon:_The_Light_and_the_Dark
-   
+
 	Archon android application port is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Library General Public License as
 	published by the Free Software Foundation; either version 2 of the
@@ -19,6 +19,7 @@
 	See the GNU Library General Public License for more details.
 
 */
+
 package at.area23.archon;
 
 import android.content.Context;
@@ -113,8 +114,9 @@ public class BattleModeActivity extends AppCompatActivity {
             finish();
             return true;
         }
-        if (id == R.id.action_stop) {
-            finish();
+        if (id == R.id.action_exit) {
+            finishAffinity();
+            System.exit(0);
             return true;
         }
         if (id == R.id.action_help) {
@@ -131,13 +133,7 @@ public class BattleModeActivity extends AppCompatActivity {
     public void addListenerOnClickables() {
 
         backButton = (Button) findViewById(R.id.backButton);
-        backButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                backButton_Clicked(arg0);
-            }
-        });
-
+        backButton.setOnClickListener(arg0 -> backButton_Clicked(arg0));
     }
 
 

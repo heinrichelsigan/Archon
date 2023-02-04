@@ -10,11 +10,19 @@ package at.area23.archon;
 
 import android.app.Activity;
 import android.content.ClipData;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.media.AudioAttributes;
 import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.os.Bundle;
 import android.view.Menu;
@@ -27,12 +35,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.ShowableListMenu;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.lang.reflect.Field;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import at.area23.archon.R;
+import at.area23.archon.models.GlobalAppSettings;
+
 import static android.R.*;
 import static android.R.id.*;
 import static android.R.id;
@@ -46,16 +62,22 @@ public class BaseMainActivity extends AppCompatActivity {
     protected volatile int errNum = 0;
     protected String tmp = "";
 
+    // public GlobalAppSettings globalVariable;
     protected Menu myMenu;
     protected AtomicInteger atomInt;
     protected HashMap<Integer, android.view.View> viewMap;
     protected android.view.View rootView = null;
+    protected volatile boolean atomicSoundLock = false;
+    volatile Integer syncLock;
+    protected volatile String sound2Play = "";
 
+    protected final static Handler playL8rHandler = new Handler(Looper.getMainLooper());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        RessourceViewHashMap(rootView, viewMap);
+        // globalVariable = (GlobalAppSettings) getApplicationContext();
+        // RessourceViewHashMap(rootView, viewMap);
     }
 
 
@@ -298,6 +320,279 @@ public class BaseMainActivity extends AppCompatActivity {
 
 
     /**
+     * setLanguage
+     * @param language - the langzage
+     * @return true in case of succcess, otherwise false
+     */
+    protected boolean setLanguage(String language, MenuItem item) {
+        return setLocale(new Locale(language), item);
+    }
+
+    /**
+     * setLanguage
+     * @param aLocale - a locale
+     * @param item - a menu item
+     * @return true in case of succcess, otherwise false
+     */
+    protected boolean setLocale(Locale aLocale, MenuItem item) {
+        if (item != null) {
+            item.setChecked(true);
+        }
+        // if (globalVariable.getLocale().getLanguage() != aLocale.getLanguage()) {
+            //Overwrites application locale in GlobalAppSettings with english
+        //     globalVariable.setLocale(aLocale);
+        // }
+        return true;
+    }
+
+
+    /**
+     * showAbout() starts about activity
+     */
+    public void showAbout() {
+        // try {
+        //     Thread.currentThread().sleep(10);
+        // } catch (Exception exInt) {
+        //     errHandler(exInt);
+        // }
+        // tDbg.setText(R.string.help_text);
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * showHelp() prints out help text
+     */
+    public void showHelp() {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
+
+
+    /**
+     * screenShot
+     *
+     * @param view2Bmp view2Bmp
+     */
+    public void screenShot(View view2Bmp) {
+
+        if (view2Bmp == null) {
+            view2Bmp = getWindow().getDecorView().getRootView();
+        }
+
+        view2Bmp.buildDrawingCache();
+
+        String path = Environment.getExternalStorageDirectory().toString();
+        // path = Environment.getStorageDirectory().toString();
+        path = getApplicationContext().getExternalFilesDir(null).getAbsolutePath();
+
+        Date currentTime = Calendar.getInstance().getTime();
+        String datePartStr =  (currentTime.getMonth() < 10) ? "0" : "" + String.valueOf(currentTime.getMonth());
+        String saveName = currentTime.getYear() + "-" + datePartStr;
+        datePartStr = (currentTime.getDay() < 10) ? "0" : "" + String.valueOf(currentTime.getDay());
+        saveName = saveName + datePartStr + "_supu_" + String.valueOf(currentTime.getTime()) + ".jpg";
+        OutputStream fileOutStream = null;
+        File file = new File(path, saveName);
+
+        try {
+            fileOutStream = new FileOutputStream(file);
+            Bitmap pictureBitmap = view2Bmp.getDrawingCache(); // view2Bmp.getDrawingCache(true);
+            pictureBitmap.compress(Bitmap.CompressFormat.JPEG, 92, fileOutStream);
+            fileOutStream.flush();
+            fileOutStream.close();
+
+            MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), file.getName(), file.getName());
+
+        } catch (Exception saveEcx) {
+            showError(saveEcx, true);
+            saveEcx.printStackTrace();
+        }
+        try {
+            playL8rHandler.postDelayed(delayPlayScreenshot, 100);
+        }
+        catch (Exception playl8rEx) {
+            showError(playl8rEx, false);
+            playl8rEx.printStackTrace();
+        }
+    }
+
+    /**
+     * delayPlayScreenshot = new Runnable() -> { playSound("sound_menu_screenshot"); }
+     */
+    protected final Runnable delayPlayScreenshot = new Runnable() {
+        @Override
+        // @SuppressLint("InlinedApi")
+        public void run() { playSound("sound_menu_screenshot"); }
+    };
+
+    /**
+     * delayPlayMouthClick = new Runnable() -> { playSound("sound_mouth_click"); }
+     */
+    protected final Runnable delayPlayMouthClick = new Runnable() {
+        @Override
+        // @SuppressLint("InlinedApi")
+        public void run() { playSound("sound_mouth_click"); }
+    };
+
+    /**
+     * delayPlayCCC  = new Runnable() -> { playSound("sound_ccc"); }
+     */
+    protected final Runnable delayPlayCCC = new Runnable() {
+        @Override
+        // @SuppressLint("InlinedApi")
+        public void run() { playSound("sound_ccc"); }
+    };
+
+    /**
+     * delayPlayARGH = new Runnable() -> { playSound("sound_argh"); }
+     */
+    protected final Runnable delayPlayARGH = new Runnable() {
+        @Override
+        // @SuppressLint("InlinedApi")
+        public void run() { playSound("sound_argh"); }
+    };
+
+    /**
+     * delayPlayGameOver = new Runnable() -> { playGameOver()(); }
+     */
+    protected final Runnable delayPlaySound = new Runnable() {
+        @Override
+        // @SuppressLint("InlinedApi")
+        public void run() {
+            if (sound2Play != "sound_menu_screenshot.wav") {
+                playSound(sound2Play);
+                syncLock = Integer.valueOf(1);
+                synchronized (syncLock) {
+                    sound2Play = "";
+                }
+            }
+        }
+    };
+
+    /**
+     * playMediaFromUri plays any sound media from an internet uri
+     * @param url - the full quaöofoed url accessor
+     */
+    public void playMediaFromUri(String url) {
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        mediaPlayer.setAudioAttributes(
+                new AudioAttributes.Builder()
+                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                        .setUsage(AudioAttributes.USAGE_MEDIA)
+                        .build()
+        );
+        try {
+            mediaPlayer.setDataSource(url);
+            mediaPlayer.prepare(); // might take long! (for buffering, etc)
+            mediaPlayer.start();
+        } catch (Exception exi) {
+            showError(exi, true);
+        }
+    }
+
+    /**
+     * Play sound file stored in res/raw/ directory
+     * @param rawName - resource name or resource id
+     *   Name
+     *     Syntax  :  android.resource://[package]/[res type]/[res name]
+     *     Example : @<code>Uri.parse("android.resource://com.my.package/raw/sound1");</code>
+     *   Resource id
+     *     Syntax  : android.resource://[package]/[resource_id]
+     *     Example : @<code>Uri.parse("android.resource://com.my.package/" + R.raw.sound1); </code>
+     *
+     */
+    public void playRawSound(int rId, String rawName) {
+        try {
+            Resources res = getResources();
+            int resId = rId;
+            if (rawName != null) {
+                resId = getSoundRId(rawName);
+            }
+
+            if (resId != rId) {
+                String RESOURCE_PATH = ContentResolver.SCHEME_ANDROID_RESOURCE + "://";
+                String path = RESOURCE_PATH + getPackageName() + File.separator + resId;
+                Uri soundUri = Uri.parse(path);
+                showMessage("RawSound: Uri=" + soundUri.toString() + " path=" + path);
+            }
+
+            final MediaPlayer mMediaPlayer = new MediaPlayer();
+            mMediaPlayer.setVolume(1.0f, 1.0f);
+            mMediaPlayer.setLooping(false);
+            mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp) {
+                    // Toast.makeText(getApplicationContext(),
+                    //         "start playing sound", Toast.LENGTH_SHORT).show();
+                    mMediaPlayer.start();
+                }
+            });
+            mMediaPlayer.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+                @Override
+                public boolean onError(MediaPlayer mp, int what, int extra) {
+                    // Toast.makeText(getApplicationContext(), String.format(Locale.US,
+                    //         "Media error what=%d extra=%d", what, extra), Toast.LENGTH_LONG).show();
+                    return false;
+                }
+            });
+
+
+            // 2. Load using content provider, passing file descriptor.
+            ContentResolver resolver = getContentResolver();
+            AssetFileDescriptor fd = res.openRawResourceFd(resId);
+            mMediaPlayer.setDataSource(fd.getFileDescriptor(), fd.getStartOffset(), fd.getLength());
+            fd.close();
+            mMediaPlayer.prepareAsync();
+
+            // See setOnPreparedListener above
+            mMediaPlayer.start();
+
+        } catch (Exception ex) {
+            // showException(ex);
+            showMessage(String.join("MediaPlayer: " , ex.getMessage()));
+            Toast.makeText(this, ex.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    /**
+     * getSoundRId
+     * @param rawSoundName - raw sound name
+     * @return getRessources.getIdentifier(rawSoundName, ...):
+     */
+    public int getSoundRId(String rawSoundName) {
+        // Build path using resource number
+        int resID = getResources().getIdentifier(rawSoundName, "raw", getPackageName());
+        return resID;
+    }
+
+    /**
+     * playSound
+     *  plays a sound
+     * @param rawSoundName - resource name
+     *      Syntax  :  android.resource://[package]/[res type]/[res name]
+     *      Example : @<code>Uri.parse("android.resource://com.my.package/raw/sound1");</code>
+     */
+    public void playSound(String rawSoundName) {
+        int resID = getSoundRId(rawSoundName);
+        playRawSound(resID, rawSoundName);
+    }
+
+
+    /**
+     * playScreenshot
+     *  plays take screen shot sound
+     * @param fromRawOrInetUrl - boolean
+     *  if true, play sound  raw from apk binary,
+     *  otherwise (false) play sound from github repository url
+     */
+    public void playScreenshot(boolean fromRawOrInetUrl) {
+        if (fromRawOrInetUrl)
+            playSound("sound_menu_screenshot");
+        else
+            playMediaFromUri("https://github.com/heinrichelsigan/Archon/blob/master/app/src/main/res/raw/sound_menu_screenshot.wav?raw=true");
+    }
+
+    /**
      * showMessage shows a new Toast dynamic message
      * @param text to display
      * @param tooShort if set to yes, message inside toast widget appears only very shortly
@@ -338,48 +633,12 @@ public class BaseMainActivity extends AppCompatActivity {
      */
     public void showException(java.lang.Exception myEx) { showError(myEx, true); }
 
-
-
-
-
     /**
-     * playMediaFromUri plays any sound media from an internet uri
-     * @param url - the full quaöofoed url accessor
+     * exitApp() exit game
      */
-    public void playMediaFromUri(String url) {
-        MediaPlayer mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioAttributes(
-                new AudioAttributes.Builder()
-                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                        .setUsage(AudioAttributes.USAGE_MEDIA)
-                        .build()
-        );
-        try {
-            mediaPlayer.setDataSource(url);
-            mediaPlayer.prepare(); // might take long! (for buffering, etc)
-            mediaPlayer.start();
-        } catch (Exception exi) {
-            showError(exi, true);
-        }
+    public void exitApp() {
+        finishAffinity();
+        System.exit(0);
     }
 
-    public void playTakeStone() {
-        playMediaFromUri("https://github.com/heinrichelsigan/Archon/blob/master/app/src/main/res/raw/takestone.wav?raw=true");
-    }
-
-    public void playDropStone() {
-        playMediaFromUri("https://github.com/heinrichelsigan/Archon/blob/master/app/src/main/res/raw/dropstone.wav?raw=true");
-    }
-
-    public void playRawCompleted() {
-        playMediaFromUri("https://github.com/heinrichelsigan/Archon/blob/master/app/src/main/res/raw/rawcompleted.wav?raw=true");
-    }
-
-    public void playErrorDoubleColor() {
-        playMediaFromUri("https://github.com/heinrichelsigan/Archon/blob/master/app/src/main/res/raw/error1dobblecolor.wav?raw=true");
-    }
-
-    public void playErrorForbiddenPattern() {
-        playMediaFromUri("https://github.com/heinrichelsigan/Archon/blob/master/app/src/main/res/raw/error2forbiddenpattern.wav?raw=true");
-    }
 }
