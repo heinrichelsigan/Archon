@@ -839,7 +839,8 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
                             figure2 = containingFigure;
                             enterBattleMode = true;
                         } else {
-                            playL8rHandler.postDelayed(delayPlayMouthClick, 100);
+                            // playL8rHandler.postDelayed(delayPlayMouthClick, 100);
+                            ;
                         }
                     }
                 }
