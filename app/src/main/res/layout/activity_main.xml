@@ -65,6 +65,8 @@
         android:id="@+id/D8"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_d8"
+        android:contentDescription="@string/f_d8"
         android:layout_row="0"
         android:layout_column="3"
         android:background="@drawable/bgwhite">
@@ -80,6 +82,8 @@
         android:id="@+id/E8"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_e8"
+        android:contentDescription="@string/f_e8"
         android:layout_row="0"
         android:layout_column="4"
         android:background="@drawable/bgblackdiamond">
@@ -95,6 +99,8 @@
         android:id="@+id/F8"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_f8"
+        android:contentDescription="@string/f_f8"
         android:layout_row="0"
         android:layout_column="5"
         android:background="@drawable/bgwhite">
@@ -110,6 +116,8 @@
         android:id="@+id/G8"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_g8"
+        android:contentDescription="@string/f_g8"
         android:layout_row="0"
         android:layout_column="6"
         android:background="@drawable/bgblack">
@@ -125,6 +133,8 @@
         android:id="@+id/H8"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_h8"
+        android:contentDescription="@string/f_h8"
         android:layout_row="0"
         android:layout_column="7"
         android:background="@drawable/bgwhite">
@@ -140,6 +150,8 @@
         android:id="@+id/I8"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_i8"
+        android:contentDescription="@string/f_i8"
         android:layout_row="0"
         android:layout_column="8"
         android:background="@drawable/bgblack">
@@ -156,6 +168,8 @@
         android:id="@+id/A7"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_a7"
+        android:contentDescription="@string/f_a7"
         android:layout_row="1"
         android:layout_column="0"
         android:background="@drawable/bgwhite">
@@ -171,6 +185,8 @@
         android:id="@+id/B7"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_b7"
+        android:contentDescription="@string/f_b7"
         android:layout_row="1"
         android:layout_column="1"
         android:background="@drawable/bgblack">
@@ -186,6 +202,8 @@
         android:id="@+id/C7"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_c7"
+        android:contentDescription="@string/f_c7"
         android:layout_row="1"
         android:layout_column="2"
         android:background="@drawable/bgwhite">
@@ -201,6 +219,8 @@
         android:id="@+id/D7"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_d7"
+        android:contentDescription="@string/f_d7"
         android:layout_row="1"
         android:layout_column="3"
         android:background="@drawable/bgblack">
@@ -216,6 +236,8 @@
         android:id="@+id/E7"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_e7"
+        android:contentDescription="@string/f_e7"
         android:layout_row="1"
         android:layout_column="4"
         android:background="@drawable/bgwhite">
@@ -231,6 +253,8 @@
         android:id="@+id/F7"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_f7"
+        android:contentDescription="@string/f_f7"
         android:layout_row="1"
         android:layout_column="5"
         android:background="@drawable/bgblack">
@@ -246,6 +270,8 @@
         android:id="@+id/G7"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_g7"
+        android:contentDescription="@string/f_g7"
         android:layout_row="1"
         android:layout_column="6"
         android:background="@drawable/bgwhite">
@@ -261,6 +287,8 @@
         android:id="@+id/H7"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_h7"
+        android:contentDescription="@string/f_h7"
         android:layout_row="1"
         android:layout_column="7"
         android:background="@drawable/bgblack">
@@ -276,6 +304,8 @@
         android:id="@+id/I7"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_i7"
+        android:contentDescription="@string/f_i7"
         android:layout_row="1"
         android:layout_column="8"
         android:background="@drawable/bgwhite">
