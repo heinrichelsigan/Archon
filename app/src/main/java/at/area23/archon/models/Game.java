@@ -42,6 +42,9 @@ public class Game {
     public int dimension = 9;
     public int size = 9;
     public int fieldIdCnt = 0;
+    public int battleCount = 0;
+    public int playerFiguresCount = 22;
+    public int computerFiguresCount = 22;
     public boolean perfectLevel = true;
 	
 	boolean _dropBoardEnabled = false;

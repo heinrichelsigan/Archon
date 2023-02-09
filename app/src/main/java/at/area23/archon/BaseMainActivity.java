@@ -68,6 +68,7 @@ public class BaseMainActivity extends AppCompatActivity {
     protected HashMap<Integer, android.view.View> viewMap;
     protected android.view.View rootView = null;
     protected volatile boolean atomicSoundLock = false;
+    protected GlobalAppSettings globalAppSettings;
     volatile Integer syncLock;
     protected volatile String sound2Play = "";
 
@@ -76,7 +77,9 @@ public class BaseMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // globalVariable = (GlobalAppSettings) getApplicationContext();
+        if (globalAppSettings == null) {
+            globalAppSettings = (GlobalAppSettings) getApplicationContext();
+        }
         // RessourceViewHashMap(rootView, viewMap);
     }
 

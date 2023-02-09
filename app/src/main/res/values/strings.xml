@@ -43,4 +43,96 @@
 
     <string name="s_row0">s_row0</string>
     <string name="s_row1">s_row0</string>
+
+    <string name="f_a0" translatable="false">a0</string>
+    <string name="f_b0" translatable="false">b0</string>
+    <string name="f_c0" translatable="false">c0</string>
+    <string name="f_d0" translatable="false">d0</string>
+    <string name="f_e0" translatable="false">e0</string>
+    <string name="f_f0" translatable="false">f0</string>
+    <string name="f_g0" translatable="false">g0</string>
+    <string name="f_h0" translatable="false">h0</string>
+    <string name="f_i0" translatable="false">i0</string>
+
+    <string name="f_a1" translatable="false">a1</string>
+    <string name="f_b1" translatable="false">b1</string>
+    <string name="f_c1" translatable="false">c1</string>
+    <string name="f_d1" translatable="false">d1</string>
+    <string name="f_e1" translatable="false">e1</string>
+    <string name="f_f1" translatable="false">f1</string>
+    <string name="f_g1" translatable="false">g1</string>
+    <string name="f_h1" translatable="false">h1</string>
+    <string name="f_i1" translatable="false">i1</string>
+
+    <string name="f_a2" translatable="false">a2</string>
+    <string name="f_b2" translatable="false">b2</string>
+    <string name="f_c2" translatable="false">c2</string>
+    <string name="f_d2" translatable="false">d2</string>
+    <string name="f_e2" translatable="false">e2</string>
+    <string name="f_f2" translatable="false">f2</string>
+    <string name="f_g2" translatable="false">g2</string>
+    <string name="f_h2" translatable="false">h2</string>
+    <string name="f_i2" translatable="false">i2</string>
+
+    <string name="f_a3" translatable="false">a3</string>
+    <string name="f_b3" translatable="false">b3</string>
+    <string name="f_c3" translatable="false">c3</string>
+    <string name="f_d3" translatable="false">d3</string>
+    <string name="f_e3" translatable="false">e3</string>
+    <string name="f_f3" translatable="false">f3</string>
+    <string name="f_g3" translatable="false">g3</string>
+    <string name="f_h3" translatable="false">h3</string>
+    <string name="f_i3" translatable="false">i3</string>
+
+    <string name="f_a4" translatable="false">a4</string>
+    <string name="f_b4" translatable="false">b4</string>
+    <string name="f_c4" translatable="false">c4</string>
+    <string name="f_d4" translatable="false">d4</string>
+    <string name="f_e4" translatable="false">e4</string>
+    <string name="f_f4" translatable="false">f4</string>
+    <string name="f_g4" translatable="false">g4</string>
+    <string name="f_h4" translatable="false">h4</string>
+    <string name="f_i4" translatable="false">i4</string>
+
+    <string name="f_a5" translatable="false">a5</string>
+    <string name="f_b5" translatable="false">b5</string>
+    <string name="f_c5" translatable="false">c5</string>
+    <string name="f_d5" translatable="false">d5</string>
+    <string name="f_e5" translatable="false">e5</string>
+    <string name="f_f5" translatable="false">f5</string>
+    <string name="f_g5" translatable="false">g5</string>
+    <string name="f_h5" translatable="false">h5</string>
+    <string name="f_i5" translatable="false">i5</string>
+
+    <string name="f_a6" translatable="false">a6</string>
+    <string name="f_b6" translatable="false">b6</string>
+    <string name="f_c6" translatable="false">c6</string>
+    <string name="f_d6" translatable="false">d6</string>
+    <string name="f_e6" translatable="false">e6</string>
+    <string name="f_f6" translatable="false">f6</string>
+    <string name="f_g6" translatable="false">g6</string>
+    <string name="f_h6" translatable="false">h6</string>
+    <string name="f_i6" translatable="false">i6</string>
+
+    <string name="f_a7" translatable="false">a7</string>
+    <string name="f_b7" translatable="false">b7</string>
+    <string name="f_c7" translatable="false">c7</string>
+    <string name="f_d7" translatable="false">d7</string>
+    <string name="f_e7" translatable="false">e7</string>
+    <string name="f_f7" translatable="false">f7</string>
+    <string name="f_g7" translatable="false">g7</string>
+    <string name="f_h7" translatable="false">h7</string>
+    <string name="f_i7" translatable="false">i7</string>
+
+    <string name="f_a8" translatable="false">a8</string>
+    <string name="f_b8" translatable="false">b8</string>
+    <string name="f_c8" translatable="false">c8</string>
+    <string name="f_d8" translatable="false">d8</string>
+    <string name="f_e8" translatable="false">e8</string>
+    <string name="f_f8" translatable="false">f8</string>
+    <string name="f_g8" translatable="false">g8</string>
+    <string name="f_h8" translatable="false">h8</string>
+    <string name="f_i8" translatable="false">i8</string>
+
+
 </resources>

@@ -14,14 +14,16 @@
         android:id="@+id/A8"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_a8"
+        android:contentDescription="@string/f_a8"
         android:layout_row="0"
         android:layout_column="0"
         android:background="@drawable/bgblack">
 
         <ImageView
             android:id="@+id/ogreA8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            app:layout_width="wrap_content"
+            app:layout_height="wrap_content"
             android:src="@drawable/ogre" />
     </LinearLayout>
 
@@ -29,6 +31,8 @@
         android:id="@+id/B8"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_b8"
+        android:contentDescription="@string/f_b8"
         android:layout_row="0"
         android:layout_column="1"
         android:background="@drawable/bgwhite">
@@ -44,6 +48,8 @@
         android:id="@+id/C8"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:tag="@string/f_c8"
+        android:contentDescription="@string/f_c8"
         android:layout_row="0"
         android:layout_column="2"
         android:background="@drawable/bgblack">

@@ -60,6 +60,8 @@ import java.util.Objects;
 import java.util.HashMap;
 import java.util.ArrayList;
 import at.area23.archon.dialogfragment.*;
+import at.area23.archon.models.Board;
+import at.area23.archon.models.Game;
 
 public class MainActivity extends BaseMainActivity implements FinishedLevel.NoticeDialogListener, FinishedLevelPerfect.NoticeDialogListener,
         GameOver.NoticeDialogListener {
@@ -88,6 +90,8 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
     HashMap<Integer, LinearLayout> LinearLayoutRessources = new HashMap<Integer, LinearLayout>();
     HashMap<Integer, Drawable> dragNDropMap = new HashMap<>();
 
+    Game game;
+    Board board;
     int index = 4;
     int level = 0;
     int battleCount = 0;
@@ -121,15 +125,22 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
      * @param restart - boolean to fully restart
      */
     protected void startArchon(int aLevel, boolean restart) {
+
+        game = (Game)globalAppSettings.getGame();
+        if (game == null) {
+            game = new Game(getApplicationContext(), 9);
+            game.board = new Board(getApplicationContext(), 9);
+            globalAppSettings.setGame(game);
+        }
         if (level == 0) {
             setContentView(R.layout.activity_main);
         } else {
             setContentView(R.layout.activity_main);
         }
 
-        battleCount = 0;
-        playerFiguresCount = 22;
-        computerFiguresCount = 22;
+        game.battleCount = 0;
+        game.playerFiguresCount = 22;
+        game.computerFiguresCount = 22;
         started = true;
 
         InitLinearLayoutArchonFields();
@@ -291,7 +302,6 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
         unicornH0 = (ImageView) findViewById(R.id.unicornH0);
         golemI0 = (ImageView) findViewById(R.id.golemI0);
     }
-
 
 
     /**
