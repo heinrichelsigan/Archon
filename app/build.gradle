@@ -39,7 +39,7 @@ android {
             versionNameSuffix 'version'
         }
     }
-    buildToolsVersion '30.0.3'
+    buildToolsVersion '33.0.2'
     namespace 'at.area23.archon'
 }
 
