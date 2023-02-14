@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "at.area23.archon",
+  "applicationId": "at.area23.archon.debug",
   "variantName": "debug",
   "elements": [
     {
@@ -12,7 +12,7 @@
       "filters": [],
       "attributes": [],
       "versionCode": 1,
-      "versionName": "1.0",
+      "versionName": "1.0version",
       "outputFile": "app-debug.apk"
     }
   ],
