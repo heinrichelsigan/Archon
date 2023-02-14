@@ -85,6 +85,7 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
     ImageView golemA0, unicornB0, pegasusC0, djinnD0, mageE0, phoenixF0, pegasusG0, unicornH0, golemI0;
     ImageView currentImage;
     Drawable savedBackground;
+    View myScreenShotView;
 
     HashMap<Integer,ImageView> ImageRessources = new HashMap<Integer,ImageView>();
     HashMap<Integer, LinearLayout> LinearLayoutRessources = new HashMap<Integer, LinearLayout>();
@@ -919,7 +920,7 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
                 showHelp();
             }
             else if (itemId == R.id.action_screenshot) {
-                showHelp();
+                screenShot(myScreenShotView);
             }
             else if (itemId == R.id.action_desintegrate) {
                 showMessage("implement petrify");
