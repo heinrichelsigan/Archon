@@ -379,27 +379,27 @@ public class BaseMainActivity extends AppCompatActivity {
      */
     public void screenShot(View view2Bmp) {
 
-        if (view2Bmp == null) {
-            view2Bmp = getWindow().getDecorView().getRootView();
-        }
-
-        view2Bmp.buildDrawingCache();
+        view2Bmp = getWindow().getDecorView().getRootView();
+        view2Bmp.buildDrawingCache(false);
 
         String path = Environment.getExternalStorageDirectory().toString();
         // path = Environment.getStorageDirectory().toString();
         path = getApplicationContext().getExternalFilesDir(null).getAbsolutePath();
 
         Date currentTime = Calendar.getInstance().getTime();
-        String datePartStr =  (currentTime.getMonth() < 10) ? "0" : "" + String.valueOf(currentTime.getMonth());
-        String saveName = currentTime.getYear() + "-" + datePartStr;
-        datePartStr = (currentTime.getDay() < 10) ? "0" : "" + String.valueOf(currentTime.getDay());
-        saveName = saveName + datePartStr + "_supu_" + String.valueOf(currentTime.getTime()) + ".jpg";
+        String datePartS0 = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+        String datePartS1 = (Calendar.getInstance().get(Calendar.MONTH) < 10) ?
+                "0" : "" + String.valueOf(Calendar.getInstance().get(Calendar.MONTH));
+        String datePartS2 = (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) < 10) ?
+                "0" : "" + String.valueOf(Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+        String saveName = datePartS0 + "-" + datePartS1 + "-" + datePartS2 + "_archon_" +
+                String.valueOf(currentTime.getTime()) + ".jpg";
         OutputStream fileOutStream = null;
         File file = new File(path, saveName);
 
         try {
             fileOutStream = new FileOutputStream(file);
-            Bitmap pictureBitmap = view2Bmp.getDrawingCache(); // view2Bmp.getDrawingCache(true);
+            Bitmap pictureBitmap = view2Bmp.getDrawingCache(false); // view2Bmp.getDrawingCache(true);
             pictureBitmap.compress(Bitmap.CompressFormat.JPEG, 92, fileOutStream);
             fileOutStream.flush();
             fileOutStream.close();

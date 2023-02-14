@@ -5,8 +5,8 @@ INJECTED from D:\source\Archon\app\src\main\AndroidManifest.xml:2:1-43:12
 INJECTED from D:\source\Archon\app\src\main\AndroidManifest.xml:2:1-43:12
 INJECTED from D:\source\Archon\app\src\main\AndroidManifest.xml:2:1-43:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\heinr\.gradle\caches\transforms-3\229612c218d9fe79705dc19c7f400585\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.appcompat:appcompat-resources:1.6.0] C:\Users\heinr\.gradle\caches\transforms-3\b837595b230b726b9e0f40157cacfc04\transformed\jetified-appcompat-resources-1.6.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.appcompat:appcompat:1.6.0] C:\Users\heinr\.gradle\caches\transforms-3\6a84a918060e8c38e717edbe7590145c\transformed\appcompat-1.6.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\heinr\.gradle\caches\transforms-3\b63460a4e037a8213d431b85b2e33f43\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\heinr\.gradle\caches\transforms-3\780c8931bfe5d3b0e26a458d121ff58b\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\heinr\.gradle\caches\transforms-3\4a9395b98a41774121f6ab6389bc64b3\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.6.0] C:\Users\heinr\.gradle\caches\transforms-3\dd17a2f6f2dc2aadb9de917068ca86e7\transformed\jetified-activity-1.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\heinr\.gradle\caches\transforms-3\f33401e088e03b4906c1e1ee487642e4\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -132,10 +132,10 @@ INJECTED from D:\source\Archon\app\src\main\AndroidManifest.xml
 INJECTED from D:\source\Archon\app\src\main\AndroidManifest.xml
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\heinr\.gradle\caches\transforms-3\229612c218d9fe79705dc19c7f400585\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\heinr\.gradle\caches\transforms-3\229612c218d9fe79705dc19c7f400585\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.appcompat:appcompat-resources:1.6.0] C:\Users\heinr\.gradle\caches\transforms-3\b837595b230b726b9e0f40157cacfc04\transformed\jetified-appcompat-resources-1.6.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.6.0] C:\Users\heinr\.gradle\caches\transforms-3\b837595b230b726b9e0f40157cacfc04\transformed\jetified-appcompat-resources-1.6.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.6.0] C:\Users\heinr\.gradle\caches\transforms-3\6a84a918060e8c38e717edbe7590145c\transformed\appcompat-1.6.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.6.0] C:\Users\heinr\.gradle\caches\transforms-3\6a84a918060e8c38e717edbe7590145c\transformed\appcompat-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\heinr\.gradle\caches\transforms-3\b63460a4e037a8213d431b85b2e33f43\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\heinr\.gradle\caches\transforms-3\b63460a4e037a8213d431b85b2e33f43\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\heinr\.gradle\caches\transforms-3\780c8931bfe5d3b0e26a458d121ff58b\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\heinr\.gradle\caches\transforms-3\780c8931bfe5d3b0e26a458d121ff58b\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\heinr\.gradle\caches\transforms-3\4a9395b98a41774121f6ab6389bc64b3\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\heinr\.gradle\caches\transforms-3\4a9395b98a41774121f6ab6389bc64b3\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.6.0] C:\Users\heinr\.gradle\caches\transforms-3\dd17a2f6f2dc2aadb9de917068ca86e7\transformed\jetified-activity-1.6.0\AndroidManifest.xml:20:5-44
@@ -224,7 +224,7 @@ ADDED from [androidx.core:core:1.9.0] C:\Users\heinr\.gradle\caches\transforms-3
 		ADDED from [androidx.core:core:1.9.0] C:\Users\heinr\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.9.0] C:\Users\heinr\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-permission#at.area23.archon.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#at.area23.archon.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.9.0] C:\Users\heinr\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.9.0] C:\Users\heinr\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
@@ -234,7 +234,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.9.0] C:\Users\heinr\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.9.0] C:\Users\heinr\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
-uses-permission#at.area23.archon.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#at.area23.archon.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.9.0] C:\Users\heinr\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.9.0] C:\Users\heinr\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
