@@ -2,6 +2,9 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="8pt"
+    android:layout_marginEnd="8pt"
+    android:layout_marginTop="8pt"
     android:columnWidth="36dp"
     android:columnCount="9"
     android:orientation="vertical"
@@ -41,7 +44,7 @@
             android:id="@+id/basiliskB8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/basilisk" />
+            android:src="@drawable/basilisk_right" />
     </LinearLayout>
 
     <LinearLayout
@@ -126,7 +129,7 @@
             android:id="@+id/whichG8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/which" />
+            android:src="@drawable/which_left" />
     </LinearLayout>
 
     <LinearLayout
@@ -178,7 +181,7 @@
             android:id="@+id/goblinA7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/goblin" />
+            android:src="@drawable/goblin_sword_left" />
     </LinearLayout>
 
     <LinearLayout
@@ -195,7 +198,7 @@
             android:id="@+id/goblinB7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/goblin" />
+            android:src="@drawable/goblin_sword_left" />
     </LinearLayout>
 
     <LinearLayout
@@ -212,7 +215,7 @@
             android:id="@+id/goblinC7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/goblin" />
+            android:src="@drawable/goblin_sword_left" />
     </LinearLayout>
 
     <LinearLayout
@@ -280,7 +283,7 @@
             android:id="@+id/goblinG7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/goblin" />
+            android:src="@drawable/goblin_sword_right" />
     </LinearLayout>
 
     <LinearLayout
@@ -297,7 +300,7 @@
             android:id="@+id/goblinH7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/goblin" />
+            android:src="@drawable/goblin_sword_right" />
     </LinearLayout>
 
     <LinearLayout
@@ -314,7 +317,7 @@
             android:id="@+id/goblinI7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/goblin" />
+            android:src="@drawable/goblin_sword_right" />
     </LinearLayout>
 
 
@@ -784,7 +787,7 @@
             android:id="@+id/knightA1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/knight" />
+            android:src="@drawable/knight_sword_up_left" />
     </LinearLayout>
 
     <LinearLayout
@@ -799,7 +802,7 @@
             android:id="@+id/knightB1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/knight" />
+            android:src="@drawable/knight_sword_down_left" />
     </LinearLayout>
 
     <LinearLayout
@@ -814,7 +817,7 @@
             android:id="@+id/knightC1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/knight" />
+            android:src="@drawable/knight_sword_down_left" />
     </LinearLayout>
 
     <LinearLayout
@@ -874,7 +877,7 @@
             android:id="@+id/knightG1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/knight" />
+            android:src="@drawable/knight_sword_down_right" />
     </LinearLayout>
 
     <LinearLayout
@@ -889,7 +892,7 @@
             android:id="@+id/knightH1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/knight" />
+            android:src="@drawable/knight_sword_down_right" />
     </LinearLayout>
 
     <LinearLayout
@@ -904,7 +907,7 @@
             android:id="@+id/knightI1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/knight" />
+            android:src="@drawable/knight_sword_up_right" />
     </LinearLayout>
 
     <LinearLayout
@@ -1009,7 +1012,7 @@
             android:id="@+id/pegasusG0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/pegasus" />
+            android:src="@drawable/pegasus_left" />
     </LinearLayout>
 
     <LinearLayout
@@ -1024,7 +1027,7 @@
             android:id="@+id/unicornH0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/unicorn" />
+            android:src="@drawable/unicorn_left" />
     </LinearLayout>
 
     <LinearLayout

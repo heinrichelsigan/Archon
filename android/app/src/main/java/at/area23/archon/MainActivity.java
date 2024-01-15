@@ -134,7 +134,7 @@ public class MainActivity extends BaseMainActivity implements FinishedLevel.Noti
             globalAppSettings.setGame(game);
         }
         if (level == 0) {
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_archon);
         } else {
             setContentView(R.layout.activity_main);
         }
