@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="colors">
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FF0000FF</item>
+    </array>
+
+    <item name="b_a1" type="integer"></item>
+
+    <array name="rid">
+        <item name="board_a4"  type="id" format="integer">400040</item>
+        <item name="board_b4"  type="id" format="integer">401040</item>
+        <item name="board_c4"  type="id" format="integer">402040</item>
+        <item name="board_d4"  type="id" format="integer">404040</item>
+        <item name="board_e4"  type="id" format="integer">404040</item>
+        <item name="board_f4"  type="id" format="integer">405040</item>
+        <item name="board_g4"  type="id" format="integer">406040</item>
+        <item name="board_h4"  type="id" format="integer">407040</item>
+        <item name="board_i4"  type="id" format="integer">408040</item>
+        <item name="board_j4"  type="id" format="integer">409040</item>
+
+
+        <item name="board_a5"  type="id" format="integer">400050</item>
+        <item name="board_b5"  type="id" format="integer">401050</item>
+        <item name="board_c5"  type="id" format="integer">402050</item>
+        <item name="board_d5"  type="id" format="integer">404050</item>
+        <item name="board_e5"  type="id" format="integer">404050</item>
+        <item name="board_f5"  type="id" format="integer">405050</item>
+        <item name="board_g5"  type="id" format="integer">406050</item>
+        <item name="board_h5"  type="id" format="integer">407050</item>
+        <item name="board_i5"  type="id" format="integer">408050</item>
+        <item name="board_j5"  type="id" format="integer">409050</item>
+
+        <item name="board_a6"  type="id" format="integer">400060</item>
+        <item name="board_b6"  type="id" format="integer">401060</item>
+        <item name="board_c6"  type="id" format="integer">402060</item>
+        <item name="board_d6"  type="id" format="integer">404060</item>
+        <item name="board_e6"  type="id" format="integer">404060</item>
+        <item name="board_f6"  type="id" format="integer">405060</item>
+        <item name="board_g6"  type="id" format="integer">406060</item>
+        <item name="board_h6"  type="id" format="integer">407060</item>
+        <item name="board_i6"  type="id" format="integer">408060</item>
+        <item name="board_j6"  type="id" format="integer">409060</item>
+
+        <item name="board_a7"  type="id" format="integer">400020</item>
+        <item name="board_b7"  type="id" format="integer">401020</item>
+        <item name="board_c7"  type="id" format="integer">402020</item>
+        <item name="board_d7"  type="id" format="integer">404020</item>
+        <item name="board_e7"  type="id" format="integer">404020</item>
+        <item name="board_f7"  type="id" format="integer">405020</item>
+        <item name="board_g7"  type="id" format="integer">406020</item>
+        <item name="board_h7"  type="id" format="integer">407020</item>
+        <item name="board_i7"  type="id" format="integer">408020</item>
+        <item name="board_j7"  type="id" format="integer">409020</item>
+
+
+        <item name="board_a8"  type="id" format="integer">400030</item>
+        <item name="board_b8"  type="id" format="integer">401030</item>
+        <item name="board_c8"  type="id" format="integer">402030</item>
+        <item name="board_d8"  type="id" format="integer">403030</item>
+        <item name="board_e8"  type="id" format="integer">404030</item>
+        <item name="board_f8"  type="id" format="integer">405030</item>
+        <item name="board_g8"  type="id" format="integer">406030</item>
+        <item name="board_h8"  type="id" format="integer">407030</item>
+        <item name="board_i8"  type="id" format="integer">408030</item>
+        <item name="board_j8"  type="id" format="integer">409030</item>
+
+        <item name="board_a7"  type="id" format="integer">400070</item>
+        <item name="board_b7"  type="id" format="integer">401070</item>
+        <item name="board_c7"  type="id" format="integer">402070</item>
+        <item name="board_d7"  type="id" format="integer">404070</item>
+        <item name="board_e7"  type="id" format="integer">404070</item>
+        <item name="board_f7"  type="id" format="integer">405070</item>
+        <item name="board_g7"  type="id" format="integer">406070</item>
+        <item name="board_h7"  type="id" format="integer">407070</item>
+        <item name="board_i7"  type="id" format="integer">408070</item>
+        <item name="board_j7"  type="id" format="integer">409070</item>
+
+
+        <item name="board_a8"  type="id" format="integer">400080</item>
+        <item name="board_b8"  type="id" format="integer">401080</item>
+        <item name="board_c8"  type="id" format="integer">402080</item>
+        <item name="board_d8"  type="id" format="integer">403080</item>
+        <item name="board_e8"  type="id" format="integer">404080</item>
+        <item name="board_f8"  type="id" format="integer">405080</item>
+        <item name="board_g8"  type="id" format="integer">406080</item>
+        <item name="board_h8"  type="id" format="integer">407080</item>
+        <item name="board_i8"  type="id" format="integer">408080</item>
+        <item name="board_j8"  type="id" format="integer">409080</item>
+
+        <item name="board_a9"  type="id" format="integer">400090</item>
+        <item name="board_b9"  type="id" format="integer">401090</item>
+        <item name="board_c9"  type="id" format="integer">402090</item>
+        <item name="board_d9"  type="id" format="integer">403090</item>
+        <item name="board_e9"  type="id" format="integer">404090</item>
+        <item name="board_f9"  type="id" format="integer">405090</item>
+        <item name="board_g9"  type="id" format="integer">406090</item>
+        <item name="board_h9"  type="id" format="integer">407090</item>
+        <item name="board_i9"  type="id" format="integer">408090</item>
+        <item name="board_j9"  type="id" format="integer">409090</item>
+    </array>
+
+
+</resources>

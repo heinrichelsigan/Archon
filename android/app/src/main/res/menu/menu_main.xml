@@ -1,0 +1,95 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="at.area23.archon.MainActivity">
+    <item
+        android:id="@+id/action_start"
+        android:orderInCategory="100"
+        android:title="@string/action_restart"
+        app:showAsAction="never" />
+    <group android:id="@+id/group_level"
+        android:menuCategory="secondary"
+        android:visible="true">
+        <item
+            android:id="@+id/action_spells"
+            android:orderInCategory="500"
+            android:title="@string/action_spells"
+            app:showAsAction="collapseActionView">
+            <menu>
+                <item android:id="@+id/action_stun_spell"
+                    android:orderInCategory="2050"
+                    android:title="@string/action_stun_spell"
+                    android:enabled="true"
+                    android:checkable="true"
+                    android:checked="false" />
+                <item android:id="@+id/action_shift_time"
+                    android:orderInCategory="2060"
+                    android:title="@string/action_shift_time"
+                    android:enabled="true"
+                    android:checkable="true"
+                    android:checked="false" />
+                <item android:id="@+id/action_magic_missle"
+                    android:orderInCategory="2070"
+                    android:title="@string/action_magic_missle"
+                    android:enabled="true"
+                    android:checkable="true"
+                    android:checked="false" />
+                <item android:id="@+id/action_summon_elemental"
+                    android:orderInCategory="2080"
+                    android:title="@string/action_summon_elemental"
+                    android:enabled="true"
+                    android:checkable="true"
+                    android:checked="false" />
+                <item android:id="@+id/action_resurrect"
+                    android:orderInCategory="2090"
+                    android:title="@string/action_resurrect"
+                    android:enabled="true"
+                    android:checkable="true"
+                    android:checked="false" />
+                <item android:id="@+id/action_desintegrate"
+                    android:orderInCategory="2100"
+                    android:title="@string/action_desintegrate"
+                    android:enabled="true"
+                    android:checkable="true"
+                    android:checked="false" />
+                <item android:id="@+id/action_mute"
+                    android:orderInCategory="2100"
+                    android:title="@string/action_mute"
+                    android:enabled="true"
+                    android:checkable="true"
+                    android:checked="false" />
+                <item android:id="@+id/action_petrify"
+                    android:orderInCategory="2100"
+                    android:title="@string/action_petrify"
+                    android:enabled="true"
+                    android:checkable="true"
+                    android:checked="false" />
+            </menu>
+        </item>
+    </group>
+    <item
+        android:id="@+id/action_screenshot"
+        android:orderInCategory="9000"
+        android:title="@string/action_screenshot"
+        android:icon="@drawable/camera"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_help"
+        android:orderInCategory="9100"
+        android:title="@string/action_help"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="9200"
+        android:title="@string/action_about"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_exit"
+        android:orderInCategory="9900"
+        android:title="@string/action_exit"
+        android:enabled="true"
+        app:showAsAction="never" />
+</menu>
